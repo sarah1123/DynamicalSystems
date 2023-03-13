@@ -1,0 +1,185 @@
+\documentclass[12pt,letterpaper,noanswers]{exam}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[margin=0.9in]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{multicol}
+\pagestyle{head}
+\header{AM 108 Class 31}{}{Pendulum data}
+\runningheadrule
+\headrule
+\usepackage{graphicx} % more modern
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+
+\begin{document}
+ \pdfpageheight 11in 
+  \pdfpagewidth 8.5in
+
+\noindent 
+
+
+
+
+\begin{itemize}
+\itemsep0em
+\item You have a project weekly log due today (and again next Friday).  Your project work is replacing problem sets.
+\item There is \textbf{not} a new skill check for Monday.
+\item We will have our final pre-class assignment for Monday.
+\item The Quiz 02 Follow Up is due Mon Nov 23rd.  The retake, if assigned to you, is due Thurs Dec 3rd.  Request a different due date via private message on Piazza, if needed.
+\item I will post guidance for the project progress report today or tomorrow.
+\end{itemize}
+
+\hrule
+\vspace{0.2cm}
+
+
+
+\noindent\textbf{Teams}
+
+
+
+\vspace{0.2cm}
+
+\hrule
+\vspace{0.2cm}
+
+
+\noindent\textbf{Big picture}
+
+We have studied the period-doubling route to chaos (including two spacings in the logistic orbit diagram that occur in many unimodal maps).  We have connected the appearance of chaos in the logistic map to chaos in the Rossler system.  In addition, we used the Lorenz map to see that there are no stable periodic behaviors in that system.
+
+On Monday, we will work with one new example of a 2D map.  It is a map that was developed to help people understand the fractal structure of a chaotic attractor.
+
+Today: \emph{data interlude}.  Given a dynamical systems model of a phenomenon, and data drawn from a real system, we will look briefly at a method to fit the model to the data.  We will also combine the measured data and the model to address measurement errors in the data.
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+\begin{tcolorbox}
+A \textbf{well-posed problem} is one where a solution exists and is unique, and the behavior of the solution changes continuously with change in the initial conditions.  \url{https://en.wikipedia.org/wiki/Well-posed_problem}
+
+In an \textbf{ill-posed problem}, some aspect of well-posedness is violated: the solution might not exist; it might not be unique; it might change discontinuously with change in initial conditions.
+
+For a problem that is not well-posed, it may be possible to reformulate it in a way that is well posed by adding additional assumptions.  The process of reformulation is referred to as \textbf{regularization}.
+\end{tcolorbox}
+
+\begin{tcolorbox}
+Two problems (think of integration and differentiation) can be considered \textbf{inverse} to each other, if the formulation of one involves the other.  The `simpler' problem is often referred to as the \textbf{direct problem} or \textbf{forward problem} and the harder problem as the \textbf{inverse problem}.
+
+Given a dynamical model and measurements of all parameters, creating a prediction of the behavior of the system is considered to be a \emph{forward problem}.  You have created such predictions using \texttt{NDSolve}.
+
+Given a set of observations of the evolution of a dynamical system and a dynamical system, identifying the parameters of the system (\textbf{parameter identification}) is considered to be an \emph{inverse problem}.
+\end{tcolorbox}
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+
+\noindent\textbf{Skill Check C32 practice}
+\begin{questions}
+\item Skill check C29 retake.
+
+\item Skill check C30 retake.
+\end{questions}
+
+\vspace{0.2cm}
+
+\hrule
+\vspace{0.2cm}
+
+
+\noindent\textbf{Questions}
+
+\noindent \ \ 0.  Share a plant, tree, flower, etc that you like with your team, and write your names on the slide.
+
+\begin{questions}
+\question (Pendulum model).  We have two models for a pendulum.  One is nonlinear: $\ddot \theta + c_1\dot \theta + c_2\sin\theta = 0$.  The other is a linearization: $\ddot \theta + c_1 \dot \theta + c_2\theta = 0$.
+
+\begin{parts}
+\item In a series of five pendulum experiments, I recorded a voltage, $V$, where $V = m\theta + k$.  I don't have access to $m$ or $k$.  Rewrite the linear equation above as a system in terms of $V$.
+%\item Rearrange the linear system that $\ddot\theta + c_1\dot\theta + c_2\sin\theta = 0$ is equivalent to $\ddot V + a\sin(V/m) + b\cos(V/m) + c \dot V = 0$.
+
+% \emph{Recall that $\sin A+B = \sin A \cos B + \cos A\sin B$.}
+\item Rearrange to show that $\ddot\theta + c_1 \dot\theta + c_2 \theta = 0$ is equivalent to $\ddot V - a V - b - c\dot V = 0$.
+\end{parts}
+If the $\dot V$ term is zero then the system is conservative.  If it is nonzero, then energy is being lost from the system over time.
+
+\question (First order system).  Convert $\ddot V - aV-b-c\dot V = 0$ to a first order system.  Let $x = V$ and $y = \dot V$ when constructing your system.
+
+\question Open the \texttt{C31Pendulumexplore.nb} notebook.
+\begin{parts}
+\item Load and plot the data (the very first section).
+
+You just have voltage data, $x$.  We'll use $\dot x(t) \approx \frac{x(t+\Delta t) - x(t)}{\Delta t}$ as an estimate for $y(t)$.   
+\item Run ``Make a phase portrait using finite differences''.
+\end{parts}
+Notice that the trajectories in your phase portrait are noisy.
+
+\question (Where is the noise?). Run the sections of code labeled ``Compare to smoothed version to see measurement error''.  
+
+The smoothed version of the voltage data is made by taking a running average of small intervals of the data.  You should see that the error is around $\pm 0.0004$ or so.  That can't account for the noisiness of the trajectories: it is an error of $0.1$\% (comparing it to the range of values $V$ takes on).
+
+\question (Noise impacts derivatives) Let $f(t)$ be a function.  Let $0<\delta < 1$ and $n$ an integer.  Define $f_n^{\delta}(t) := f(t) + \delta \sin \frac{n t}{\delta}$.  We are adding small high-frequency noise to our function.  
+\begin{parts}
+\item Find an expression for $\frac{d}{dt}\left(f_n^{\delta}(t)\right)$.
+\item Make the plots in ``Noise impacts derivatives''.  Notice the impact of the noise on $x$ and on $y=\dot x$.
+%Plot $f(x)$ and $f_n^{\delta}(x)$ for $f(x) = \sin x$, $\delta = 0.0004$ and $n = 0.5$.
+%\item Plot $f'(x)$ and $\left(f_n^{\delta}\right)'(x)$ for $f(x) = \sin x$, $\delta = 0.01$ and $n = 3$.
+\end{parts}
+Think of $f$ as the exact behavior of some system and $f_n^{\delta}$ as the measured behavior of that system.  If you were to integrate $f_n^{\delta}$, the high-frequency noise would mainly cancel itself out.  Differentiating, though, the noise is amplified.  For this reason, we consider integration to be the \emph{forward problem} or \emph{direct problem} and differentiation to be the \emph{inverse problem}.
+
+\item Run the code ``Use regularization to make the phase portrait'' to use a built-in Mathematica command to create a less noisy estimate of the derivative, and to plot the phase portrait.  
+
+Try a few values of the \texttt{regularizationconstant} between $1$ and $20$ to see the impact on the phase portrait.
+
+\item (Fitting the model) Now that we have a usable estimate of the derivative, we'll fit a model.
+\begin{parts}
+\item Find an estimate for the second derivatives by running ``Find the second derivative as well''.
+\item We'll assume $\ddot x = a x + b + c\dot x$ where $a,b,c$ are unknown.  We have estimates of $\ddot x, x, \dot x$.  Let $\ddot x_d, x_d, \dot x_d$ be the data vectors associated with these variables.  We have: 
+
+$\left(\begin{array}{c c c }x_d &1 &\dot x_d\end{array}\right]\left(\begin{array}{c} a \\ b \\ c \end{array}\right) = \ddot x_d$.  This is a linear algebra problem.  We use linear least squares to estimate $a,b, c$.  Run ``Fit a model and plot its prediction'' to fit the model and then to integrate the resulting differential equation.
+\item Notice the discrepancy between the blue (model) and red (data) curves.  This method is okay but didn't do an amazing job.
+\item I searched for better parameter values using a method called gradient descent.  Run ``New parameter set from gradient descent''.  The blue curve is the new parameter values and the orange curve is the old one.  
+
+It is surprising that the model does very well for some of the time series but badly for others.  We are actually seeing the period of oscillation of the pendulum evolve in a couple of the time-series and the model just can't capture that.
+\end{parts}
+
+\question (Using the model) Open and run "Re-initialize the numerical simulation partway through".  This is starting a new simulation using initial conditions from about halfway through the data.  
+
+Notice that there is a period of time where each simulation does track the data.
+
+By restarting the model using information from the data, we can create a smooth trajectory that better tracks the data.
+
+\question (Optimal state estimation).
+
+There is a method for combining a model and data to optimally estimate the actual state of the underlying system.  This method is called a Kalman filter and for a linear system with Gaussian noise, it is the best way to combine the model and the data.
+
+\begin{parts}
+\item The method is easier to use with a discrete dynamical system.
+
+Let $z = x + b/a$ so $\dot z = \dot x = y$ and $\dot y = a z + c y$.  Over short time intervals, $\Delta t$, we have $z(t+ \Delta t) \approx z(t) + \Delta t y(t)$, $y(t+\Delta t) = y(t) + \left(az(t) + cy(t)\right)\Delta t$.  
+
+
+Show that this gives us the matrix equation $\left(\begin{array}{c} z_{n+1} \\ y_{n+1} \end{array}\right) \approx \left(\begin{array}{c c}1 & \Delta t \\ a\Delta t & 1+ c\Delta t  \end{array}\right)\left(\begin{array}{c}z_n \\ y_n \end{array}\right)$ for the evolution of the state of the system according to our model.
+
+\item Run "Combine the data and the model to estimate the state of the system." and see the new phase portrait that comes from reinitialing the model based on the data at each time step.
+\end{parts}
+
+\end{questions}
+
+Answers.
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item %$\theta = (V-k)/m$.  $\dot\theta = \dot V/m$.  $\ddot \theta = \ddot V/m$.  $\ddot V/m + c_1 \dot V/m + c_2 \sin (V/m - k/m) = 0$ so $\ddot V + c_1 \dot V + c_2 m \sin(V/m - k/m) = 0$.  
+        $\ddot V + c_1 \dot V + c_2 (V-k) = 0$.
+        %\item $\ddot V + c_2 m(\sin V/m)\cos(-k/m) + c_2m\cos(V/m)\sin(-k/m) + c_1\dot V = 0$ so let $a = c_2m\cos(-k/m)$, $b = c_2m\sin(-k/m)$ and $c = c_1$.
+        
+        \item $\theta = (V-k)/m$.  $\dot\theta = \dot V/m$.  $\ddot \theta = \ddot V/m$.  $\ddot V/m + c_1 \dot V/m + c_2 (V-k)/m = 0$.
+         $\ddot V + c_2(V-k) + c_1 \dot V = 0$.  Let $ a= -c_2$, $b = c_2(k)$ and $c=-c_1$.
+    \end{enumerate}
+    \item $\ddot x = \dot y$ so $\dot y = a x + b + cy$ and $\dot x = y$.  
+\end{enumerate}
+
+\end{document}

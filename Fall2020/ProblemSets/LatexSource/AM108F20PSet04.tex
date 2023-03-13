@@ -1,0 +1,150 @@
+\documentclass[12pt,letterpaper,noanswers]{exam}
+%\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[margin=0.9in]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{multicol}
+\pagestyle{head}
+\definecolor{c03}{HTML}{FFDDDD}
+\header{AM 108 Problem Set 04}{Updated on \today.}{Due Fri Oct 2\\ at 5pm ET}
+\runningheadrule
+\headrule
+\usepackage{diagbox}
+\usepackage{graphicx} % more modern
+%\usepackage{subfigure} 
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+%\usepackage{gensymb} 
+%\usepackage{natbib}
+\usepackage{hyperref}
+%\usepackage{enumitem}
+%\setlength{\parindent}{0pt}
+%\usepackage{setspace}
+%\pagestyle{empty}  
+%\newcommand{\Sc}[0]{
+%{\color{BlueViolet}\S}
+%}
+\usepackage{tcolorbox}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+\begin{document}
+ \pdfpageheight 11in 
+  \pdfpagewidth 8.5in
+\begin{itemize}
+\item This problem set is due by 5pm on Friday Oct 2nd.  Upload your written work and screenshots of your Mathematica work to Gradescope.  Upload your Mathematica file to Canvas.
+\item Fill out the online cover sheet (on Canvas) for each assignment to name your collaborators, list resources you used, and estimate the time you spent on the assignment.
+\end{itemize}
+
+\noindent\textbf{Academic Integrity and Collaboration on Problem Sets:}  
+
+Collaborating with classmates in planning and designing solutions to homework problems is encouraged.  Collaboration, cooperation, and consultation can all be productive.  Work with others by 
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item discussing the problem,
+    \item brainstorming,
+    \item walking through possible strategies,
+    \item outlining solution methods
+\end{itemize}   
+\end{multicols}
+
+\noindent For problem sets, you may consult or use:
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item Course text (including answers in back)
+    \item Other books
+    \item Internet
+    \item Your notes (taken during class)
+    \item Class notes of other students
+    \item Course handouts
+    \item Piazza or Slack posts from the course staff
+    \item Computational tools such as Mathematica or Desmos
+    \item Calculators
+\end{itemize}
+\end{multicols}
+
+\noindent You may \textbf{not} consult:
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item Solution manuals
+    \item Problem sets from prior years
+    \item Solutions to problem sets from prior years
+    \item Other sources of solutions
+    \item Emails from the course staff
+\end{itemize}
+\end{multicols}
+
+\noindent You may:
+\begin{itemize}
+\itemsep-0.2em
+    \item Look at communal work while writing up your own solution
+    \item Copy computer code from the source files provided with the problem sets
+    \item Look at a screenshare of another student's computer code
+\end{itemize}
+
+\noindent You may \textbf{not}
+\begin{itemize}
+\itemsep-0.2em
+    \item Look at the individual mathematical work of others
+    \item Post about problems online
+    \item Copy and paste computer code from another student (or otherwise directly use the code of another student)
+\end{itemize}
+
+\eject
+
+{\color{blue}\href{https://hollis.harvard.edu/primo-explore/fulldisplay?docid=01HVD_ALMA512272214860003941&context=L&vid=HVD2&lang=en_US&search_scope=everything&adaptor=Local%20Search%20Engine&tab=everything&query=any,contains,strogatz%20nonlinear&offset=0}{link to book on Hollis}}
+
+
+\begin{questions}
+\question (based on 5.2.14)  Read the problem setup in the text.  We will focus on the Monte-Carlo simulation portion of the question.
+\begin{parts}
+\item Read the Mathematica code under the \texttt{Creating random matrices} and \texttt{Classifying the fixed points} headings.  Write an explanation of what these sections of code do.  \emph{Use the commands \texttt{?If}, \texttt{?For}, etc, to see short inline help about these commands and their syntax.}
+\item Modify the \texttt{Classifying the fixed points} code to include repellers.  \emph{Note that within a \texttt{For} loop every line except the final line needs to have a \texttt{;}}.
+
+Submit a screenshot of your work.
+\item For the uniform distribution on $[-1,1]$, determine the proportions of random two by two matrices that correspond to saddle points, to repellers, and to attractors.  Set \texttt{nummatrices} large enough that your results are consistently the same to two decimal places (up to rounding the third decimal place).  \emph{If this is slow on your own computer, you can run your code on wolframcloud.com}
+
+Submit a screenshot of your code, along with your results.
+\item Now redo (c) for the normal distribution.
+\end{parts}
+
+\question (6.1.4) Let $\dot{x} = y, \dot{y} = x(1+y)-1$.  
+\begin{parts}
+\item Find the fixed points of this system and classify them.  Sketch the nullclines (these are the $\dot{x} = 0$ curves, as well as the $\dot{y} = 0$ curves), representative vectors of the vector field, and a possible phase portrait for $-3<x,y<3$.  
+
+\emph{Your hand-drawn phase portrait should show the linear behavior that you've found for any fixed point(s) and then should link these linear pictures together so that no trajectories cross.}
+
+Tackle this one by hand, without using any tools to draw the phase portrait.
+
+\item Redo (a) using Mathematica.  Find the relevant code in the AM108F20Pset04.nb file.
+
+\emph{When you use numerical tools, always submit screenshots of your work on Gradescope, in addition to submitting your source code on Canvas.}
+
+\item Make a phase portrait for $-30<x,y<30$ using computational tools.
+
+\item On the $-30<x,y<30$ phase portrait, there are a few features of the flow that become visible.  
+\begin{itemize}
+    \item Find a way to approximate the quadratic curves formed by trajectories that pass through $x=0$ (and that are present whenever $\vert y\vert$ is sufficiently large).
+    
+    \emph{To think about these curves, recall that trajectories are tangent to the vectors of the vector field.  The slope of the vectors and the slope of the trajectories is locally the same. Approximate $\displaystyle\frac{dy/dt}{dx/dt}$.  This gives you an expression for $\displaystyle\frac{dy}{dx}$, so that you can find $y(x)$ on the trajectory. It should integrate nicely.}
+
+    \item Use approximation to find the curve that many trajectories approach in forwards time (for $x\ll -1$) or in backwards time (for $x\gg 1$). 
+\end{itemize}
+\end{parts}
+
+\item (6.3.10) Complete this problem as written.  
+
+\item (system from 6.4.2) Consider the system $\dot x = x(3-2x-y), \dot y = y(2-x-y)$, $x,y\geq 0$.
+\begin{parts}
+\item Working by hand, draw the nullclines on the $xy$-plane.  Indicate fixed points, and plot a representative vector in each region of the phase space.  In addition, use your vectors to identify the stability of each fixed point.
+\item Working algebraically, find the fixed points, compute the Jacobian matrix, and classify the fixed points.
+\item Use Mathematica to find the fixed points, compute the Jacobian matrix, classify the fixed points, and generate a phase portrait.
+\end{parts}
+
+\end{questions}
+
+
+
+\end{document}

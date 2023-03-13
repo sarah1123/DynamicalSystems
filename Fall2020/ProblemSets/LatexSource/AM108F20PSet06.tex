@@ -1,0 +1,185 @@
+\documentclass[12pt,letterpaper,noanswers]{exam}
+%\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[margin=0.9in]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{multicol}
+\pagestyle{head}
+\definecolor{c03}{HTML}{FFDDDD}
+\header{AM 108 Problem Set 06}{Updated on \today.}{Due Fri Oct 16\\ at 5pm ET}
+\runningheadrule
+\headrule
+\usepackage{diagbox}
+\usepackage{graphicx} % more modern
+%\usepackage{subfigure} 
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+%\usepackage{gensymb} 
+%\usepackage{natbib}
+\usepackage{hyperref}
+%\usepackage{enumitem}
+%\setlength{\parindent}{0pt}
+%\usepackage{setspace}
+%\pagestyle{empty}  
+%\newcommand{\Sc}[0]{
+%{\color{BlueViolet}\S}
+%}
+\usepackage{tcolorbox}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+\begin{document}
+ \pdfpageheight 11in 
+  \pdfpagewidth 8.5in
+\begin{itemize}
+\item This problem set is due by 5pm on Friday Oct 16th.  Upload your written work and screenshots of your Mathematica work to Gradescope.  Upload your Mathematica file to Canvas.
+\item Fill out the online cover sheet (on Canvas) for each assignment to name your collaborators, list resources you used, and estimate the time you spent on the assignment.
+\end{itemize}
+
+\noindent\textbf{Academic Integrity and Collaboration on Problem Sets:}  
+
+Collaborating with classmates in planning and designing solutions to homework problems is encouraged.  Collaboration, cooperation, and consultation can all be productive.  Work with others by 
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item discussing the problem,
+    \item brainstorming,
+    \item walking through possible strategies,
+    \item outlining solution methods
+\end{itemize}   
+\end{multicols}
+
+\noindent For problem sets, you may consult or use:
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item Course text (including answers in back)
+    \item Other books
+    \item Internet
+    \item Your notes (taken during class)
+    \item Class notes of other students
+    \item Course handouts
+    \item Piazza or Slack posts from the course staff
+    \item Computational tools such as Mathematica or Desmos
+    \item Calculators
+\end{itemize}
+\end{multicols}
+
+\noindent You may \textbf{not} consult:
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item Solution manuals
+    \item Problem sets from prior years
+    \item Solutions to problem sets from prior years
+    \item Other sources of solutions
+    \item Emails from the course staff
+\end{itemize}
+\end{multicols}
+
+\noindent You may:
+\begin{itemize}
+\itemsep-0.2em
+    \item Look at communal work while writing up your own solution
+    \item Copy computer code from the source files provided with the problem sets
+    \item Look at a screenshare of another student's computer code
+\end{itemize}
+
+\noindent You may \textbf{not}
+\begin{itemize}
+\itemsep-0.2em
+    \item Look at the individual mathematical work of others
+    \item Post about problems online
+    \item Copy and paste computer code from another student (or otherwise directly use the code of another student)
+\end{itemize}
+
+\eject
+
+{\color{blue}\href{https://hollis.harvard.edu/primo-explore/fulldisplay?docid=01HVD_ALMA512272214860003941&context=L&vid=HVD2&lang=en_US&search_scope=everything&adaptor=Local%20Search%20Engine&tab=everything&query=any,contains,strogatz%20nonlinear&offset=0}{link to book on Hollis}}
+
+
+
+\begin{questions}
+
+\question (working with polar, 7.1.5, 7.3.3) 
+\begin{parts}
+\part (7.1.5) Show that the system $\dot{r} = r(1-r^2), \dot{\theta} = 1$ is equivalent to 
+\begin{align*}
+\dot{x} &= x - y - x(x^2+y^2) \\
+\dot{y} &= x + y - y(x^2+y^2)
+\end{align*}
+where $x = r\cos\theta$ and $y = r\sin\theta$.  No need to analyze the system.
+
+\emph{Recall the multivariable chain rule: $\frac{dx}{dt} = \frac{dr}{dt}\cos\theta - r\frac{d\theta}{dt}\sin\theta$.}
+
+\emph{You are welcome to use Mathematica for this; in that case explain how you used Mathematica as part of your writeup (and submit screenshots on Gradescope along with your source code on Canvas for completeness).}
+
+
+\part (7.3.3) Do this problem as written.
+% Consider the system $\dot{x} = x - y - x^3, \dot{y} = x + y - y^3$.  Rewrite the system in polar coordinates, where $r^2 = x^2 + y^2, \tan\theta = \frac{y}{x}$.  Then construct a trapping region and use the Poincar\'e-Bendixson Theorem to show that the system has a closed trajectory.
+
+% \emph{From the chain rule: $r\dot{r} = x\dot{x} + y\dot{y}$ and $\dot{\theta} = (x\dot{y} - y\dot{x})/r^2$.}
+
+\emph{You are welcome to use Mathematica to help you; in that case explain how you used Mathematica as part of your writeup, include screenshots, etc.}
+
+\emph{Remember that trapping regions for the Poincar\'e-Bendixson theorem need to be closed sets, so they need to include their boundary points.}
+
+
+
+\end{parts}
+
+\question (7.2.9) Do this problem as written.  For (c) there's a typo in the text.  The system should be $\dot x = -2xe^{x^2+y^2}$, $\dot y = -2y e^{x^2+y^2}$.
+\question (7.2.12) Show that $\left\{\begin{array}{c} \dot{x} = -x + 2y^3-2y^4 \\ \dot{y} = -x-y+xy\end{array}\right.$ has no periodic solutions.
+
+
+Try $V(x,y) = x^m + a y^n$, and choose $a, m, n$ so that it is a Liapunov (Lyapunov) function for this system.
+
+
+
+
+\emph{You are welcome to use Mathematica for this; be sure to describe your setup in your writeup and to submit your code on Canvas.}
+
+
+
+
+\question  (6.8.14) Consider the family of linear systems $\left\{\begin{array}{c} \dot{x} = x\cos\alpha - y\sin\alpha \\ \dot{y} = x\sin\alpha + y\cos\alpha\end{array}\right.$, where $\alpha$ is a parameter that runs over the range $0\leq \alpha\leq \pi$.
+
+
+
+\begin{parts}
+\item Working analytically, classify the fixed point at the origin as a function of $\alpha$.  Generate phase portraits for a few values and include the computational tool you used along with any specific commands as part of your solution.  
+
+
+
+%\emph{You can upload images onto Overleaf and can also insert code using the verbatim environment.}
+%\emph{Submitting a mathematica file separately is just fine.  Include text in the file explaining what you're doing, and remember to use complete sentences.}
+\item \[I_C = \frac{1}{2\pi}\oint_C \frac{f\ dg - g\ df}{f^2+g^2}\] is an integral that gives you $I_C$.  
+
+Use this integral to show that $I_C$ is independent of $\alpha$. %(and see 6.8.13 for the derivation of the integral).
+
+\emph{You may have questions about notation - please post them to the class on Piazza.  $df$ and $dg$ are differentials.  They capture the change in $f$ or in $g$ as either or both $x, y$ changes so $df = f_x dx + f_y dy$.}
+
+
+
+\item Let $C$ be a circle centered at the origin.  Compute $I_C$ explicitly by evaluating the integral.
+
+
+\emph{You may not have worked with line integrals in some time, and may not have used differential notation for them before.  Below is a worked example taken from a calculus textbook:}
+
+Example Q: Evaluate $\int_C x y dx - y^2 dy$ where $C$ is the line segment from $(0,0)$ to $(2,6)$.
+
+Example solution: First, parameterize the curve $C$.  Let $x = t$, so for $x$ to go from $0$ to $2$ we choose $0 \leq t \leq 2$.  Next, find $y$ in terms of $t$ so that at each time $t$ we are at a point along the curve.  Since $y = 3x$ is our curve, let $y = 3t$.  Our parameterization is $x(t) = t, y(t) = 3t, 0\leq t\leq 2$.
+
+Next, find $dx$ and $dy$.  This is just like what you do in a $u$-substitution.  Here, $dx = 1 dt$ and $dy = 3dt$.
+
+Now plug this all in to the integral:  $\int_C xydx - y^2 dy = \int_0^2 (t)(3t)dt - (3t)^23dt$.  Next, simplify and evaluate:  $\int_0^2 (3t^2 - 27t^2)dt = -24 \int_0^2 t^2 dt$.
+
+
+
+\end{parts}
+
+
+\end{questions}
+
+
+
+\end{document}

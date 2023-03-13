@@ -1,0 +1,133 @@
+\documentclass[12pt,letterpaper,noanswers]{exam}
+%\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[margin=0.9in]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{multicol}
+\pagestyle{head}
+\definecolor{c03}{HTML}{FFDDDD}
+\header{AM 108 Problem Set 03}{Updated on \today.}{Due Fri Sept 25\\ at 5pm ET}
+\runningheadrule
+\headrule
+\usepackage{diagbox}
+\usepackage{graphicx} % more modern
+%\usepackage{subfigure} 
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+%\usepackage{gensymb} 
+%\usepackage{natbib}
+\usepackage{hyperref}
+%\usepackage{enumitem}
+%\setlength{\parindent}{0pt}
+%\usepackage{setspace}
+%\pagestyle{empty}  
+%\newcommand{\Sc}[0]{
+%{\color{BlueViolet}\S}
+%}
+\usepackage{tcolorbox}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+\begin{document}
+ \pdfpageheight 11in 
+  \pdfpagewidth 8.5in
+\begin{itemize}
+\item This problem set is due by 5pm on Friday September 25th.  Upload your written work and screenshots of your Mathematica work to Gradescope.  Upload your Mathematica file to Canvas.
+\item Fill out the online cover sheet (on Canvas) for each assignment to name your collaborators, list resources you used, and estimate the time you spent on the assignment.
+\end{itemize}
+
+\noindent\textbf{Academic Integrity and Collaboration on Problem Sets:}  
+
+Collaborating with classmates in planning and designing solutions to homework problems is encouraged.  Collaboration, cooperation, and consultation can all be productive.  Work with others by 
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item discussing the problem,
+    \item brainstorming,
+    \item walking through possible strategies,
+    \item outlining solution methods
+\end{itemize}   
+\end{multicols}
+
+\noindent For problem sets, you may consult or use:
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item Course text (including answers in back)
+    \item Other books
+    \item Internet
+    \item Your notes (taken during class)
+    \item Class notes of other students
+    \item Course handouts
+    \item Piazza or Slack posts from the course staff
+    \item Computational tools such as Mathematica or Desmos
+    \item Calculators
+\end{itemize}
+\end{multicols}
+
+\noindent You may \textbf{not} consult:
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item Solution manuals
+    \item Problem sets from prior years
+    \item Solutions to problem sets from prior years
+    \item Other sources of solutions
+    \item Emails from the course staff
+\end{itemize}
+\end{multicols}
+
+\noindent You may:
+\begin{itemize}
+\itemsep-0.2em
+    \item Look at communal work while writing up your own solution
+    \item Copy computer code from the source files provided with the problem sets
+    \item Look at a screenshare of another student's computer code
+\end{itemize}
+
+\noindent You may \textbf{not}
+\begin{itemize}
+\itemsep-0.2em
+    \item Look at the individual mathematical work of others
+    \item Post about problems online
+    \item Copy and paste computer code from another student (or otherwise directly use the code of another student)
+\end{itemize}
+
+\eject
+
+{\color{blue}\href{https://hollis.harvard.edu/primo-explore/fulldisplay?docid=01HVD_ALMA512272214860003941&context=L&vid=HVD2&lang=en_US&search_scope=everything&adaptor=Local%20Search%20Engine&tab=everything&query=any,contains,strogatz%20nonlinear&offset=0}{link to book on Hollis}}
+
+\begin{questions}
+\question (based on 3.7.5)  Read the problem setup in the text for the framing of this question and for the dynamical system that you're working with.
+
+\begin{parts}
+\item Do the nondimensionalization in part (a).  Show your mathematical steps.
+\item Analyze the system in the case where $s = 0$, showing your work.  $s = 0$ corresponds to no signal substance, $S$.  Based on your work, what long term behavior(s) would you observe in the system in the absence of signal substance?
+\item Create a bifurcation diagram with $s$ along the horizontal axis, and $r$ fixed.  \emph{You may use Mathematica for this; if you do, submit screenshots on Gradescope and code in your source file on Canvas}.  Identify the value of $r$ that you chose.  Name any bifurcation(s) you see in your diagram and mark the bifurcation points along the $s$ axis.
+\item Assume $g(0) = 0$, meaning there is no gene product (and $x(0) = 0$).  Suppose $s$ is slowly increased from zero to a large value.  What happens to $g(t)$ (or $x(t)$)?  Suppose $s$ is then slowly decreased back to zero.  Does the gene turn off again (does $g(t)$ return to zero)?
+\item How does the behavior you found in (d) depend on the value of $r$ that you chose?  If possible, find a value of $r$ where you would see a different behavior given the scenario in (d).
+\item By modifying code in the \texttt{AM108F20PSet03.nb} Mathematica file, create a stability diagram for this system.  In your Mathematica file, include a section label, and text describing the steps you're using to find the stability diagram.  Submit a screenshot of the Mathematica work on Gradescope, and submit your source file on Canvas.
+\item Working by hand, find parametric equations for the bifurcation curves in $(r,s)$-space.  Show your steps.  \emph{These are the curves that you plot in your stability diagram}.
+\item The title of the problem was ``A biochemical switch'', where the switch refers to a single pulse of some signaling substance turning on a gene (so that the gene then stays on).  According to your analysis, for what range of $r$ does the system have this kind of switch?  How can you see this using your stability diagram?
+\end{parts}
+
+\question (4.5.3)  See the text for this question.  For part (a), include a phase portrait drawn on the circle. 
+
+\question (4.5.1) See the text for this question.  For part d: explain what $T_{\text{drift}}$ represents as well as finding the formula.
+
+\question (based on 3.7.6) Read the problem setup in the text for the framing of this question and for the dynamical system that you're working with.
+\begin{parts}
+\item see the text \emph{One way to do this is to show $\frac{d}{dt}(x+y+z) = 0$, so if $x+y+z$ starts at $N$ it will stay at $N$.}
+\item We have $\dot x = -k x y, \dot z = l y$.  Rewrite the $\dot x$ equation using $\dot z$ in place of $y$.  Separate variables, and integrate both sides with respect to time, then manipulate, to find $x(t) = x_0 e^{-kz(t)/l}$, where $x_0 = x(0)$.
+\item Write $y$ in terms of $N,x,z$, and use your expression from (b), to show that $z$ satisfies the first-order equation $\dot z = l(N-z-x_0e^{-kz/l})$.
+\item Use nondimensionalization to rewrite this equation as $\frac{du}{d\tau} = a - bu - e^{-u}$.  Show your steps, provide expressions for $u,\tau,a,b$ and show that $a\geq 1$ and $b> 0$.
+\item Do part (f) in the text.  Read part (g) as well (but no you can skip showing this).
+\item Do parts (h) and (i) in the text.  Read part (j) as well (but you can skip writing this out).
+\item Do part (k) in the text.
+\end{parts}
+
+
+\end{questions}
+
+
+
+\end{document}

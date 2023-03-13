@@ -1,0 +1,197 @@
+\documentclass[12pt,letterpaper,noanswers]{exam}
+%\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[margin=0.9in]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{multicol}
+\pagestyle{head}
+\definecolor{c03}{HTML}{FFDDDD}
+\header{AM 108 Problem Set 08}{Updated on \today.}{Due Fri Oct 30\\ at 5pm ET}
+\runningheadrule
+\headrule
+\usepackage{diagbox}
+\usepackage{graphicx} % more modern
+%\usepackage{subfigure} 
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+%\usepackage{gensymb} 
+%\usepackage{natbib}
+\usepackage{hyperref}
+%\usepackage{enumitem}
+%\setlength{\parindent}{0pt}
+%\usepackage{setspace}
+%\pagestyle{empty}  
+%\newcommand{\Sc}[0]{
+%{\color{BlueViolet}\S}
+%}
+\usepackage{tcolorbox}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+\begin{document}
+ \pdfpageheight 11in 
+  \pdfpagewidth 8.5in
+\begin{itemize}
+\item This problem set is due by 5pm on Friday Oct 23rd.  Upload your written work and screenshots of your Mathematica work to Gradescope.  Upload your Mathematica file to Canvas.
+\item Fill out the online cover sheet (on Canvas) for each assignment to name your collaborators, list resources you used, and estimate the time you spent on the assignment.
+\end{itemize}
+
+\noindent\textbf{Academic Integrity and Collaboration on Problem Sets:}  
+
+Collaborating with classmates in planning and designing solutions to homework problems is encouraged.  Collaboration, cooperation, and consultation can all be productive.  Work with others by 
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item discussing the problem,
+    \item brainstorming,
+    \item walking through possible strategies,
+    \item outlining solution methods
+\end{itemize}   
+\end{multicols}
+
+\noindent For problem sets, you may consult or use:
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item Course text (including answers in back)
+    \item Other books
+    \item Internet
+    \item Your notes (taken during class)
+    \item Class notes of other students
+    \item Course handouts
+    \item Piazza or Slack posts from the course staff
+    \item Computational tools such as Mathematica or Desmos
+    \item Calculators
+\end{itemize}
+\end{multicols}
+
+\noindent You may \textbf{not} consult:
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item Solution manuals
+    \item Problem sets from prior years
+    \item Solutions to problem sets from prior years
+    \item Other sources of solutions
+    \item Emails from the course staff
+\end{itemize}
+\end{multicols}
+
+\noindent You may:
+\begin{itemize}
+\itemsep-0.2em
+    \item Look at communal work while writing up your own solution
+    \item Copy computer code from the source files provided with the problem sets
+    \item Look at a screenshare of another student's computer code
+\end{itemize}
+
+\noindent You may \textbf{not}
+\begin{itemize}
+\itemsep-0.2em
+    \item Look at the individual mathematical work of others
+    \item Post about problems online
+    \item Copy and paste computer code from another student (or otherwise directly use the code of another student)
+\end{itemize}
+
+\eject
+
+{\color{blue}\href{https://hollis.harvard.edu/primo-explore/fulldisplay?docid=01HVD_ALMA512272214860003941&context=L&vid=HVD2&lang=en_US&search_scope=everything&adaptor=Local%20Search%20Engine&tab=everything&query=any,contains,strogatz%20nonlinear&offset=0}{link to book on Hollis}}
+
+
+
+\begin{questions}
+\question (8.6.9)
+
+We are exploring a model of tree frogs.  We want the model to explain experimental results that are observed with two tree frogs and with three tree frogs.
+\begin{parts}
+\part With two tree frogs, the observation is that they alternate their croak rhythms to croak a half-cycle apart.  This is called \emph{antiphase synchronization}.
+
+Assume the frogs have identical natural frequencies and the same response function to hearing other frogs.
+
+A model of the interaction is
+\begin{align*}
+\dot{\theta_1}&=\omega+H(\theta_2-\theta_1) \\
+\dot{\theta_2}&=\omega+H(\theta_1-\theta_2),
+\end{align*}
+where $H$ is the coupling function.  Assume it is odd, smooth, and $2\pi$-periodic.
+
+Rewrite this system in terms of the phase difference $\phi = \theta_1 - \theta_2$. 
+
+\emph{Recall that an odd function is a function where $f(-x) = -f(x)$.}
+
+
+
+\item Identify the values of $\phi$ that should be associated with stable fixed points for the model to be consistent with the experimental results.  \emph{Provide your (brief) reasoning}.
+% To explain the experimental results you will want $\phi \rightarrow \pi$ or $-\pi$ at $t\rightarrow\infty$ (so the stable fixed points should be $\phi = \pm \pi$).
+
+
+
+
+
+\part Show that the experimental results for two frogs are consistent with the simple interaction function $H(x) = a\sin x$, if the sign of $a$ is chosen appropriately.
+
+
+\part With three of the frogs interacting, they cannot each be half a cycle away from the others.  They have been observed to settle into one of two distinctive patterns.  One stable pattern involves a pair calling in unison with the third half a cycle out of phase of both.  The other stable pattern has the three frogs maximally out of sync, with each calling one-third of a cycle apart from the other two.
+
+A model of the interaction for three frogs is
+\begin{align*}
+\dot{\theta_1}&=\omega+H(\theta_2-\theta_1) +H(\theta_3-\theta_1) \\
+\dot{\theta_2}&=\omega+H(\theta_3-\theta_2)+H(\theta_1-\theta_2) \\
+\dot{\theta_3}&=\omega+H(\theta_1-\theta_3)+H(\theta_2-\theta_3). \\
+\end{align*}
+The interaction function needs to be the same as for the two-frog model (since it is the same frogs interacting).
+
+Rewrite this system in terms of the phase differences $\phi = \theta_1 - \theta_2$ and $\psi = \theta_2 - \theta_3$.
+
+
+\item Identify the values of $\phi$ and $\psi$ that should be associated with stable fixed points for the model to be consistent with the experimental results.
+
+%To explain the experimental results you would want $\phi \rightarrow 0$ with $\psi \rightarrow \pi$ or you would want $\phi \rightarrow \pi$ with $\psi \rightarrow 0$ or you would want $\phi \rightarrow \pi$ with $\psi \rightarrow\pi$ or you would want $\phi \rightarrow 2\pi/3$ and $\psi \rightarrow 2\pi/3$ as $t\rightarrow \infty$ (or both to $4\pi/3$).
+
+
+
+
+\part Show that $H(x) = a \sin x$ cannot account for the three-frog results.
+
+\emph{You can use Mathematica for your analysis of the fixed points.  Submit your *.nb file and include screenshots of your work on Gradescope.}
+
+
+\end{parts}
+
+\question For 8.2.6 and 8.2.7, use numerical methods to determine whether the Hopf at $\mu = 0$ appears to be supercritical or subcritical.
+
+\emph{Identifying whether 8.2.5 is subcritical or supercritical is worked as an example in \texttt{AM108F20PSet08.nb}.}
+
+Use a Poincar\'e map as part of your work.
+
+\question Read 8.1.15.  \textbf{There is a typo in the equations in the text for 8.1.15}.  Use
+\begin{align*}
+\dot n_A &= (p+n_A)n_{AB} - n_An_B \\
+\dot n_B &= n_B n_{AB} -(p+n_A)n_B
+\end{align*}
+rather than the equations in the text.
+\begin{parts}
+\item Do part (a) as written.
+\item Create two streamplots, one on either side of $p=0.134$ (choose $p$ close to $0.134$).  Add the trajectory described in the text (initial conditions of everyone believing in $B$ except the true believers) to each streamplot.
+\item Use Mathematica to find all of the fixed points.  Plot the $x$ values vs $p$ for each fixed point.  
+\begin{verbatim}
+fp = Solve[f[x, y] == 0, {x, y}]
+Plot[Evaluate[x /. fp], {p, 0, 1}]
+\end{verbatim}
+(Using "Evaluate" will make the four curves different colors).
+\item Use Mathematica to find the trace and determinant for each fixed point:
+\begin{verbatim}
+jacobian = Grad[f[x, y], {x, y}];
+tr[p_] = Tr[jacobian] /. fp
+det[p_] = Det[jacobian] /. fp
+Plot[Evaluate[tr[p]], {p, 0, 1}, PlotRange -> All]
+Plot[Evaluate[det[p]], {p, 0, 1}, PlotRange -> All]
+\end{verbatim}
+\item Use the trace and determinant plots to identify the stable fixed points (there are two).  What type of bifurcation occurs at $p\approx 0.134$?  What kinds of fixed points are involved?
+\item For $p<0.134$, and $n_A = 0, n_B = 1-p$, describe the beliefs of people in this system after a long time (according to this model). For $p>0.134$ and $n_A = 0, n_B = 1-p$, describe the beliefs after a long time.
+\end{parts}
+
+\end{questions}
+
+
+
+\end{document}

@@ -1,0 +1,179 @@
+\documentclass[12pt,letterpaper,noanswers]{exam}
+%\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[margin=0.9in]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{multicol}
+\pagestyle{head}
+\definecolor{c03}{HTML}{FFDDDD}
+\header{AM 108 Problem Set 07}{Updated on \today.}{Due Fri Oct 23\\ at 5pm ET}
+\runningheadrule
+\headrule
+\usepackage{diagbox}
+\usepackage{graphicx} % more modern
+%\usepackage{subfigure} 
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+%\usepackage{gensymb} 
+%\usepackage{natbib}
+\usepackage{hyperref}
+%\usepackage{enumitem}
+%\setlength{\parindent}{0pt}
+%\usepackage{setspace}
+%\pagestyle{empty}  
+%\newcommand{\Sc}[0]{
+%{\color{BlueViolet}\S}
+%}
+\usepackage{tcolorbox}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+\begin{document}
+ \pdfpageheight 11in 
+  \pdfpagewidth 8.5in
+\begin{itemize}
+\item This problem set is due by 5pm on Friday Oct 23rd.  Upload your written work and screenshots of your Mathematica work to Gradescope.  Upload your Mathematica file to Canvas.
+\item Fill out the online cover sheet (on Canvas) for each assignment to name your collaborators, list resources you used, and estimate the time you spent on the assignment.
+\end{itemize}
+
+\noindent\textbf{Academic Integrity and Collaboration on Problem Sets:}  
+
+Collaborating with classmates in planning and designing solutions to homework problems is encouraged.  Collaboration, cooperation, and consultation can all be productive.  Work with others by 
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item discussing the problem,
+    \item brainstorming,
+    \item walking through possible strategies,
+    \item outlining solution methods
+\end{itemize}   
+\end{multicols}
+
+\noindent For problem sets, you may consult or use:
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item Course text (including answers in back)
+    \item Other books
+    \item Internet
+    \item Your notes (taken during class)
+    \item Class notes of other students
+    \item Course handouts
+    \item Piazza or Slack posts from the course staff
+    \item Computational tools such as Mathematica or Desmos
+    \item Calculators
+\end{itemize}
+\end{multicols}
+
+\noindent You may \textbf{not} consult:
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item Solution manuals
+    \item Problem sets from prior years
+    \item Solutions to problem sets from prior years
+    \item Other sources of solutions
+    \item Emails from the course staff
+\end{itemize}
+\end{multicols}
+
+\noindent You may:
+\begin{itemize}
+\itemsep-0.2em
+    \item Look at communal work while writing up your own solution
+    \item Copy computer code from the source files provided with the problem sets
+    \item Look at a screenshare of another student's computer code
+\end{itemize}
+
+\noindent You may \textbf{not}
+\begin{itemize}
+\itemsep-0.2em
+    \item Look at the individual mathematical work of others
+    \item Post about problems online
+    \item Copy and paste computer code from another student (or otherwise directly use the code of another student)
+\end{itemize}
+
+\eject
+
+{\color{blue}\href{https://hollis.harvard.edu/primo-explore/fulldisplay?docid=01HVD_ALMA512272214860003941&context=L&vid=HVD2&lang=en_US&search_scope=everything&adaptor=Local%20Search%20Engine&tab=everything&query=any,contains,strogatz%20nonlinear&offset=0}{link to book on Hollis}}
+
+
+
+\begin{questions}
+
+\item (van der Pol system and excitability 7.5.6)
+We saw a model of excitability in question 4.5.3, on an earlier problem set.  A modified van der Pol system can also be used to model an excitable system.
+
+Consider the biased van der Pol system $\ddot{x} + \mu(x^2-1)\dot{x} + x = a$.  This system is biased by a constant force, $a$, where $a$ can be positive, negative, or zero.  Assume $\mu > 0$ as usual.
+\begin{parts}
+\part Find the fixed points and classify them as stable, unstable, or saddle points. 
+   % \item There are Hopf bifurcations in this system.  Sketch the bifurcation curves in the $\mu a$-plane to make a stability diagram.
+   % \item On your stability diagram, use the fact that you know the $a = 0$ system has a unique stable limit cycle for large $\mu$ to mark the region of the $\mu a$ plane where there is a stable limit cycle.
+   % \item What types of Hopf bifurcations are occurring in this system?  How do you know?
+
+\part Using a Li\'enard transformed system (so do the steps of the transformation for yourself), plot the nullclines.  Show that if (and only if) they intersect on the middle branch of the cubic nullcline, the corresponding fixed point is unstable (reference your work in part a).
+
+\part Assume $\mu\gg 1$.  Li\'enard's theorem does not apply for $a \neq 0$.
+
+Show that the system has a stable limit cycle when $\vert a \vert < 1$.
+
+\emph{Do this by constructing a trapping region that satisfies the Poincar\'e-Bendixson theorem.}
+
+
+
+\part Provide reasoning about flow in the system to argue that there cannot be a limit cycle when $a > 1$.
+
+
+\part To model an excitable system in 4.5.3, we chose a parameter set where oscillation was turned off and where we were close to the bifurcation.  We'll do a similar thing here.  Choose $a$ slightly greater than $1$.  
+
+\begin{itemize}
+    \item Show that the system is \emph{excitable} (that it has a globally attracting fixed point, but certain disturbances can send the system on a long excursion through phase space before returning to the fixed point) and explain how excitability manifests in this system.
+    \item Plot a phase portrait of the system with a trajectory showing the long excursion superimposed.  \emph{Remember to submit screenshots of your work on Gradescope and your source code on Canvas}. 
+    \item In addition, plot $x$ vs time for two cases, one where a disturbance leads to a long excursion and one where it does not.
+\end{itemize}  
+
+
+
+% \part (4.5.3a) For a simple caricature of an excitable system, consider the system $\dot{\theta} = \mu + \sin\theta$ where $\mu$ is slightly less than $1$.  Show that this system is excitable.  What is playing the role of the rest state?  What sets the threshold for disturbances that lead to long excursions?
+\end{parts}
+Steve relates these models of excitability to neural systems.  Notice that the spike size (plot $x$ or $\theta$ with its excursion) doesn't depend on the size of the stimulus (so long as the stimulus exceeds some threshold).  The forced van der Pol model is related to the Fitzhugh-Nagumo model of neural activity.  (See the corresponding textbook questions for references).
+
+\item Analyze the weakly nonlinear systems in (7.6.5: $h(x,\dot x) = x\dot{x}^2$) and (7.6.9: $h(x,\dot x) = (x^2-1)\dot{x}^3$), where the system is $\ddot x + x + \epsilon h(x,\dot x) = 0$.
+\begin{parts}
+\item Use the energy method from Q2 on Class Activity C16 (and C17) to find the radii associated with closed trajectories.
+\item By modifying the code in \texttt{AM108F20PSet07.nb}, create a phase portrait showing three trajectories.  If relevant, one trajectory should spiral inwards towards a stable limit cycle and another should spiral outwards.  The third trajectory should be chosen to match the radius of the closed trajectory you found in your calculation.  \emph{If not relevant, plot three trajectories of your choice.}
+
+Remember to submit screenshots of your work as well as the source code.
+\item By modifying the code in \texttt{AM108F20PSet07.nb}, use an approximate Poincar\'e map to attempt to confirm (or amend) your work in (a).
+
+\emph{Using Mathematica, we approximate the Poincar\'e map (at a few values of the domain) numerically, rather than exactly finding the map analytically.}
+\end{parts}
+
+\item Let $h(x,\dot x) = (1-x^2)\dot x$ for the system $\ddot x + x + \epsilon h(x,\dot x) = 0$.  This is very similar to the system we analyzed in class.
+\begin{parts}
+\item Derive the 2d first-order system associated with this problem.  In addition, create the backwards time version of this system.
+
+To create a backwards time version, reverse time in the system by doing a change of variables where $t\rightarrow -t$.  Perhaps let $\tau = -t$, so that the backwards time system is $\frac{dx}{d\tau}, \frac{dy}{d\tau}$.
+\item Create plots of the approximate Poincar\'e maps for the forwards time and backwards time systems. 
+\item Describe how you can identify the stability of the limit cycle using information in the approximate Poincar\'e map, and identify the stability of the limit cycle in the forwards time and backwards time systems.
+\item Create streamplots of the two systems, each with a trajectory superimposed.  To select the trajectories, start in the backwards time system and generate a trajectory of your choice.  Read off the final state value for that trajectory, and use that final value as the initial conditions for generating a trajectory in the forward system.
+Example: \begin{verbatim}
+finalpt = {x[t],y[t]}/.soln2b/.t->tMax
+x00 = finalpt[[1,1]]
+y00 = finalpt[[1,2]]
+\end{verbatim}
+)
+
+\begin{itemize}
+\item What is the relationship between the two trajectories that you have generated?
+\item For the forward time system, what makes it necessary to choose the initial conditions carefully?
+\end{itemize}
+
+
+\end{parts}
+
+
+\end{questions}
+
+
+
+\end{document}

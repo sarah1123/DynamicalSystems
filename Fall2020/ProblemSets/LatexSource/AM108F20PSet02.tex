@@ -1,0 +1,174 @@
+\documentclass[12pt,letterpaper,noanswers]{exam}
+%\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[margin=0.9in]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{multicol}
+\pagestyle{head}
+\definecolor{c03}{HTML}{FFDDDD}
+\header{AM 108 Problem Set 02}{Updated on \today.}{{\colorbox{c03}{\makebox[3.0cm][l]{Due Fri Sept 18}}}\\ at 5pm ET}
+\runningheadrule
+\headrule
+\usepackage{diagbox}
+\usepackage{graphicx} % more modern
+%\usepackage{subfigure} 
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+%\usepackage{gensymb} 
+%\usepackage{natbib}
+\usepackage{hyperref}
+%\usepackage{enumitem}
+%\setlength{\parindent}{0pt}
+%\usepackage{setspace}
+%\pagestyle{empty}  
+%\newcommand{\Sc}[0]{
+%{\color{BlueViolet}\S}
+%}
+\usepackage{tcolorbox}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+\begin{document}
+ \pdfpageheight 11in 
+  \pdfpagewidth 8.5in
+\begin{itemize}
+\item This problem set is due by 5pm on Friday September 18th.  Upload your written work and screenshots of your Mathematica work to Gradescope.  Upload your Mathematica file to Canvas.
+\item Fill out the online cover sheet (on Canvas) for each assignment to name your collaborators, list resources you used, and estimate the time you spent on the assignment.
+\end{itemize}
+
+\noindent\textbf{Academic Integrity and Collaboration on Problem Sets:}  
+
+Collaborating with classmates in planning and designing solutions to homework problems is encouraged.  Collaboration, cooperation, and consultation can all be productive.  Work with others by 
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item discussing the problem,
+    \item brainstorming,
+    \item walking through possible strategies,
+    \item outlining solution methods
+\end{itemize}   
+\end{multicols}
+
+\noindent For problem sets, you may consult or use:
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item Course text (including answers in back)
+    \item Other books
+    \item Internet
+    \item Your notes (taken during class)
+    \item Class notes of other students
+    \item Course handouts
+    \item Piazza or Slack posts from the course staff
+    \item Computational tools such as Mathematica or Desmos
+    \item Calculators
+\end{itemize}
+\end{multicols}
+
+\noindent You may \textbf{not} consult:
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item Solution manuals
+    \item Problem sets from prior years
+    \item Solutions to problem sets from prior years
+    \item Other sources of solutions
+    \item Emails from the course staff
+\end{itemize}
+\end{multicols}
+
+\noindent You may:
+\begin{itemize}
+\itemsep-0.2em
+    \item Look at communal work while writing up your own solution
+    \item Copy computer code from the source files provided with the problem sets
+    \item Look at a screenshare of another student's computer code
+\end{itemize}
+
+\noindent You may \textbf{not}
+\begin{itemize}
+\itemsep-0.2em
+    \item Look at the individual mathematical work of others
+    \item Post about problems online
+    \item Copy and paste computer code from another student (or otherwise directly use the code of another student)
+\end{itemize}
+
+\eject
+
+
+
+\noindent The following problems are copied (nearly verbatim) from the text.
+
+
+
+\begin{questions}
+\question Let \[\dot{x} = rx - \frac{x}{1+x^2}.\]
+Show your mathematical steps or reasoning for each part.
+\begin{parts}
+\part Compute the values of $r$ at which bifurcations occur.  Do this by hand, showing your manipulation steps.
+\part Classify the bifurcations as saddle-node, transcritical, supercritical pitchfork, or subcritical pitchfork (providing the mathematical reasoning behind your classifications).
+\part Sketch the bifurcation diagram of fixed points $x^*$ vs $r$.
+\part Use Mathematica (or symbolic tools in another language) to redo (a) and (c).  Submit your Mathematica work as part of your problem set on Gradescope.  You'll submit the actual Mathematica source file separately (on Canvas).
+\begin{itemize}
+\itemsep-0.1em
+    \item Open the PSet02 Mathematica file for examples.
+    \item Create your own Mathematica file (include your name in the filename). 
+    \item Copy and edit a section label and some text to label the work on this problem and to briefly describe what you're doing.
+    \item For (a), find the code for identify a bifurcation point (meaning the value of $r$) and the associated fixed point at the bottom of the file.  Use a modified version of this code to redo (a).
+    \item For (c), modify the plotting code to generate a plot that shows the shape of the bifurcation diagram.  If you're able to get the plotting to work (as it says in the notebook, the code is pretty touchy), make a plot that has the stability information.
+\end{itemize}   
+
+\end{parts}
+\question Consider the system $\dot{x} = rx - \sin x$. 
+\begin{parts}
+\item For the case $r=0$, find and classify all fixed points of the system, and sketch the phase portrait on the $x$-axis.
+\item For $r>1$ show that there is only one fixed point, and classify it.
+\item As $r$ decreases from $\infty$ to $0$ classify \textbf{all} of the bifurcations that occur.  
+
+\emph{Hint: To think about this, plot $\sin x$ and $r x$ on the same axes.  You might use a tool, such as Desmos (or Manipulate within Mathematica) that allows you to manipulate $r$.}
+
+Remember to label all plots that you include in your write-up.
+\item For $0<r\ll 1$, find an approximate formulate for values of $r$ at which bifurcations occur.  
+
+\emph{Hint: For small $r$, note that bifurcations occur with $\sin x \approx 1$ or $\sin x \approx -1$.  This observation will allow you to approximate $x$ and then $r$.}
+\item Sketch a bifurcation diagram for $-\infty < r < \infty$ based on your work in abcd.  It's shape can be approximate.  Indicate the stability of the various branches of fixed points by using solid and dashed lines appropriately.
+
+\emph{Do not use a numerical tool for the shape when you work on this.}
+\item Use Mathematica (or your other language).
+\begin{itemize}
+\itemsep-0.1em
+\item Try to find the bifurcation points.  What kind of error do you get?
+\item Create a bifurcation diagram (or at least a plot that captures the shape of the bifurcation diagram).
+\end{itemize}
+\end{parts}
+
+\question (maps)
+\begin{parts}
+\item Analyze the map $x_{n+1} = 3x - x^3$.  Find the fixed points, and identify whether they are attractors or repellers.
+\item Sketch a cobweb diagram for a non-fixed point initial condition of your choice
+\item Using the cobweb plot code in Mathematica (or writing your own code to make cobweb plots in another language), explore the long term behavior for $x_0 = 1.9$ and for $x_0 = 2.1$.  Make plots of $x_n$ vs $n$, as well.  Include your plots in your Gradescope submission (and include the code in your the source file you submit on Canvas).  
+\item Simple 1d maps can show very complicated behaviors that don't occur in 1d flows. Describe in words the behaviors that you are seeing. 
+\end{parts}
+
+
+\question (Nondimensionalization practice) 
+{\color{blue}\href{https://hollis.harvard.edu/primo-explore/fulldisplay?docid=01HVD_ALMA512272214860003941&context=L&vid=HVD2&lang=en_US&search_scope=everything&adaptor=Local%20Search%20Engine&tab=everything&query=any,contains,strogatz%20nonlinear&offset=0}{link to book on Hollis}}
+\begin{parts}
+\item Do 3.5.8
+\item Do 3.6.5b.  Skip all of the other parts of this problem (you're using the equation from part a but don't need to do part a).  There is only one variable in this equation (time isn't involved).  Treat $m, g, \sin\theta, k, L_0, a$ as constants.  Let $u = x/x_0$ and proceed through the nondimensionalization process from there.
+\end{parts}
+
+\question Consider the system $\dot x = r x - ax^2 - x^3$ where $a\in \mathbb{R}$.  When $a = 0$ we have the normal form for a supercritical pitchfork bifurcation.  Study the effects of the parameter $a$.
+\begin{parts}
+\item For each $a$ there is a bifurcation diagram of the system.  As $a$ varies, these diagrams may be qualitatively different.  Provide sketches or Mathematica plots of the qualitatively different diagrams.  \emph{Show your work / reasoning or include code in your source code file and make a note that the work is in the Mathematica file.}
+\item To summarize your results, create an $ra$-plane (so each axis is a parameter).  Mark regions of the plane that have qualitatively different phase portraits.  Bifurcations are at the boundaries of the regions.  Identify the types of bifurcations that occur.  
+
+Include a description of how you constructed this plot.  
+
+\emph{We will refer to this type of parameter-space plot as a \textbf{stability diagram}}.
+\end{parts}
+
+\end{questions}
+
+
+
+\end{document}

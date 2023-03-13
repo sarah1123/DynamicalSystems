@@ -1,0 +1,145 @@
+\documentclass[12pt,letterpaper,noanswers]{exam}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[margin=0.9in]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{multicol}
+\pagestyle{head}
+\header{AM 108 Class 23}{}{Lorenz system}
+\runningheadrule
+\headrule
+\usepackage{graphicx} % more modern
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+
+\begin{document}
+ \pdfpageheight 11in 
+  \pdfpagewidth 8.5in
+
+\noindent 
+
+
+
+
+\begin{itemize}
+\item No problem set: project work this week (guidelines posted by tomorrow at noon ET).
+\item There is a skill check for Wednesday.
+\item There will be a pre-class assignment for Monday.
+\end{itemize}
+
+\hrule
+\vspace{0.2cm}
+
+
+
+\noindent\textbf{Project Teams}
+
+Team 1: 
+
+
+\noindent \textbf{Teams 1 and 2}: Post screenshots of your work to the course Google Drive today.  Include words, labels, and other short notes that might make those solutions useful to you or your classmates.  Find the link in Canvas (or here: \url{https://drive.google.com/drive/u/0/folders/1GcpwvKHD4tMecpFQ4lNxN_r5Ylj7YHbd})
+
+
+\vspace{0.2cm}
+
+\hrule
+\vspace{0.2cm}
+
+
+\noindent\textbf{Big picture}
+
+The Lorenz '63 system is an important example of a system with sensitive dependence on initial conditions.  We will use this system as our core example of a chaotic system and will explore the system numerically today.
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+
+
+
+(Volume contraction) The Lorenz system is dissipative, meaning that volumes in the phase space are contracted under the flow.  Consider an arbitrary closed surface $S$.  This surface encloses a region $W$ that has volume $V$.  We can think of every point in $W$ as the initial condition of a trajectory.  Let each of them evolve forward in time (under the action of the dynamical system), let $W(t)$ be the set they evolve to at time $t$ (with surface $S(t)$.  The volume of the set is evolving in time!
+
+%for time $\Delta t$, then the volume may change.  
+
+How does the volume change with time?  
+
+$\displaystyle \dot{V} = \int_W \text{div }\vec{f}\ dV$ where $\vec f$ is the vector field given by the dynamical system.  
+\begin{parts}
+\item Find $\text{div }\vec f$ and argue that $\dot{V}$ is negative for the Lorenz system.  Use this to conclude that volumes contract.  When volumes in phase space are contracted under the action of the flow, we call a system \emph{dissipative}, so you are showing that the Lorenz system is a dissipative system.
+
+\emph{Recall that $\text{div }\vec f = \nabla \cdot \vec f = \frac{\partial \dot x}{\partial x} + \frac{\partial \dot y}{\partial y} + \frac{\partial \dot z}{\partial z}$.}
+
+\item Use $\dot V = \int_W \nabla \cdot \underline{f}\ dV$ to find $V(t)$ for this system.
+
+\end{parts}
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+
+\noindent\textbf{Skill Check C24 practice}
+\begin{questions}
+\item Retake of skill check C21: global bifurcations (saddle-node of limit cycles, homoclinic, saddle-node infinite period).
+
+\item Determine the attractor for the phase portrait drawn below.
+
+\includegraphics[]{img/C26-2019-11-06p2.png}
+
+\end{questions}
+
+\vspace{0.2cm}
+
+\hrule
+\vspace{0.2cm}
+
+\noindent\textbf{Skill check C24 practice solution}
+
+The stable fixed point at the center of the spirals is the only attractor visible.  It is closed, attracting, invariant, and minimal.
+
+\vspace{0.2cm}
+
+\hrule
+\vspace{0.2cm}
+\noindent\textbf{Questions}
+
+\noindent \ \ 0.  Share something about autumn that you enjoy and write your names on the slide.
+
+\begin{questions}
+
+
+
+
+
+\question The characteristic equation for the eigenvalues of the Jacobian at the fixed points $C_+$ and $C_-$ is
+\[\lambda^3 + (\sigma + b + 1)\lambda^2 + (r+\sigma) b \lambda + 2 b \sigma (r-1) = 0.\]
+
+At the Hopf bifurcation, there is a pair of imaginary eigenvalues, $\lambda_+ = i\omega$ and $\lambda_- = -i\omega$.
+There must be a third eigenvalue, too, $\lambda_3$.  By assuming all three of these eigenvalues are solutions of the characteristic equation, meaning that they
+are roots of the polynomial equation, find $\lambda_3$ and construct an implicit relationship for $r_H$, the value of $r$ at the Hopf.
+
+
+\item I'm providing Mathematica code for you to explore the Lorenz system and the Rossler system.
+\begin{parts}
+\part Try different values of $r$ for the Lorenz system (both bigger and smaller) and use them to plot trajectories in the phase space and vs time.  Perhaps look up some interesting values.  
+\part Read the code for the Poincar\'e map, and look up any commands that aren't familiar.  Work to figure out what is going on with this code.  Add axis labels to the plot to represent what it is showing.
+\part Do the same for the z-``map''.  What does this seem to be showing?  This map is called the Lorenz map.
+\part Explore these for the Rossler system.
+\end{parts}
+
+\end{questions}
+
+\eject
+1: Close to the Hopf bifurcations, the eigenvalues will be of the from $a - i\omega, a + i\omega, \lambda_3$.  At the bifurcation itself, $a = 0$.
+
+A characteristic equation with these roots is:
+$(\lambda - i\omega)(\lambda+i\omega)(\lambda-\lambda_3) = 0$
+
+At $r = r_H$ we have $\lambda^3 - \lambda_3 \lambda^2 + \omega^2 \lambda - \omega^2\lambda_3 = 0$.
+
+Matching terms: $\lambda_3 = -(\sigma + b +1)$.  $\omega^2 = (r+\sigma)b$.  
+
+An implicit equation for $r_H$ at the moment of bifurcation can be found from setting $-\omega^2\lambda_3 = 2b\sigma(r-1)$ given the expressions for $\omega^2$ and $\lambda_3$ above, so 
+
+$(\sigma+b+1)b(r_H+\sigma) = 2b\sigma(r_H-1)$
+
+\end{document}

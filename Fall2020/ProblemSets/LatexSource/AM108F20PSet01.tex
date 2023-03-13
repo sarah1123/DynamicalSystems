@@ -1,0 +1,282 @@
+\documentclass[12pt,letterpaper,noanswers]{exam}
+%\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[margin=0.9in]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{multicol}
+\pagestyle{head}
+\definecolor{c02}{HTML}{FFBBBB}
+\definecolor{c03}{HTML}{FFDDDD}
+\header{AM 108 Problem Set 01}{Updated on \today.}{Due Fri Sept 11\\ at 5pm ET}
+\runningheadrule
+\headrule
+\usepackage{diagbox}
+\usepackage{graphicx} % more modern
+%\usepackage{subfigure} 
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+%\usepackage{gensymb} 
+%\usepackage{natbib}
+\usepackage{hyperref}
+%\usepackage{enumitem}
+%\setlength{\parindent}{0pt}
+%\usepackage{setspace}
+%\pagestyle{empty}  
+%\newcommand{\Sc}[0]{
+%{\color{BlueViolet}\S}
+%}
+\usepackage{tcolorbox}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+\begin{document}
+ \pdfpageheight 11in 
+  \pdfpagewidth 8.5in
+\begin{itemize}
+\item This problem set is due by 5pm on Friday September 11th.  Upload your written work and screenshots of your Mathematica work to Gradescope.  Upload your Mathematica file to Canvas.
+\item If you would like to use Python rather than Mathematica, that's fine.  Complete the calculation and plotting portions of the pset in Python, include the requested screenshots, and upload your Python file to Canvas.  Do still complete Problem 0 (gaining access to WolframCloud).
+\item Fill out the online cover sheet (on Canvas) for each assignment to name your collaborators, list resources you used, and estimate the time you spent on the assignment.
+\end{itemize}
+
+\noindent\textbf{Academic Integrity and Collaboration on Problem Sets:}  
+
+Collaborating with classmates in planning and designing solutions to homework problems is encouraged.  Collaboration, cooperation, and consultation can all be productive.  Work with others by 
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item discussing the problem,
+    \item brainstorming,
+    \item walking through possible strategies,
+    \item outlining solution methods
+\end{itemize}   
+\end{multicols}
+
+\noindent For problem sets, you may consult or use:
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item Course text (including answers in back)
+    \item Other books
+    \item Internet
+    \item Your notes (taken during class)
+    \item Class notes of other students
+    \item Course handouts
+    \item Piazza or Slack posts from the course staff
+    \item Computational tools such as Mathematica or Desmos
+    \item Calculators
+\end{itemize}
+\end{multicols}
+
+\noindent You may \textbf{not} consult:
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item Solution manuals
+    \item Problem sets from prior years
+    \item Solutions to problem sets from prior years
+    \item Other sources of solutions
+    \item Emails from the course staff
+\end{itemize}
+\end{multicols}
+
+\noindent You may:
+\begin{itemize}
+    \item Look at communal work while writing up your own solution
+\end{itemize}
+
+\noindent You may \textbf{not}
+\begin{itemize}
+\itemsep-0.2em
+    \item Look at the individual work of others
+    \item Post about problems online
+\end{itemize}
+
+\eject
+
+
+
+\noindent The following problems are copied (nearly verbatim) from the text.
+\begin{questions}
+
+
+% \begin{itemize}
+%     \item add a mathematica assignment here: students should plot the following curves
+%     \item copy these to a new cell and add axis labels
+%     \item now do the tick mark renaming
+%     \item change the fonts
+%     \item find the approximate solution to a diff eq and plot the time series
+%     \item show two plots together
+%     \item have them use the writing toolbox to add a title, section headings, their name, etc.
+% \end{itemize}
+
+% Notes to me: remove some of the mathematica stuff below and move it to this first question.
+
+% Designate question 6 as an optional writeup question.
+
+\setcounter{question}{-1}
+\question Go to \url{https://downloads.fas.harvard.edu/download} and follow the instructions for Mathematica.  After making your account, either install Mathematica on your computer or set up WolframCloud to run Mathematica in the cloud.
+
+If you run into difficulties with the installation, HUIT has been a helpful resource for students in the past, or you can use the cloud version.
+
+
+\question Consider the differential equation $\dot{x} = e^x - \cos x$.  
+\begin{parts}
+\item Sketch (by hand) $e^x$ and $\cos x$ vs $x$ on the same axes.  
+
+\emph{Note: For plots to be complete, they should be labeled with some kind of title identifying what is being plotted as well as axes labels and axis tick/scale markings.}
+
+% \begin{tcolorbox}
+% Mathematica:
+% You can use Mathematica to plot two curves:
+% \begin{verbatim}
+% Plot[{Log[1 + x], x - 1}, {x, -Pi/2, Pi/2}, 
+%  AxesLabel -> {"x", "functions"}, 
+%  Ticks -> {{{-Pi/2, -Pi/2}, {0.1, "ex"}, {Pi/2, Pi/2}}, Automatic}, 
+%  LabelStyle -> Medium, PlotStyle -> Thick]
+% \end{verbatim}
+
+% Details to notice: 
+% \begin{itemize}
+%     \item To plot two curves at once, the pair of them is enclosed in \{ \}. 
+%     \item Ticks: You can set where axis tick marks happen.  The "ex" is to show you that you can choose a letter or a number.  In this example, Automatic is referring to the vertical axis, while the horizontal axis ticks are being set by hand.
+%     \item LabelStyle: default fonts are small and labelstyle fixes that for standard plots. 
+%     \item PlotStyle: Thickened lines help to make the curves more visible.
+% \end{itemize}
+% \end{tcolorbox}
+
+\item Use your sketch to approximately identify fixed points, to determine their stability, and to draw the phase portrait on the real line (include arrows and filled or open circles for fixed points, depending on their stability).
+\item For $x\ll 0$, find an approximate expression for all fixed points, along with their stability.
+\item Sketch the graph of $x(t)$ (by hand) for a few qualitatively different cases.
+\item Use Mathematica to remake the plots in (a) and (d) above.  Submit your Mathematica plots as part of your problem set on Gradescope.  You'll submit the Mathematica file separately (on Canvas).
+\begin{itemize}
+\itemsep-0.1em
+    \item Open the PSet01 Mathematica file for examples.
+    \item Create your own Mathematica file (include your name in the filename). 
+    \item Copy and edit a section label and some text to label the work on this problem and to briefly describe what you're doing.
+    \item Make Mathematica cells for (a) and (d) by copying and editing code in the PSet01 Mathematica file (sections 2.2 and 2.8 are the ones that are relevant).
+    \item To make the plot in (a) Search `mathematica cosine' and 'mathematica exponential' to find the commands and their syntax.
+\end{itemize}   
+\end{parts}
+\question Formulate a differential equation that would result in an unstable fixed point at $x = -2$, a stable fixed point at $x = 1$ and a half stable fixed point at $x = 2$.  Explain your thinking clearly. 
+\question Consider the model chemical reaction 
+
+\[A+X \overset{k_1}{\underset{k_{-1}}\rightleftarrows} 2X\]
+
+in which molecule $A$ combines with molecule $X$ to form two molecules of $X$.  This means that the chemical $X$ stimulates its own production, a process called \emph{autocatalysis}.  This positive feedback leads to a chain reaction, which eventually is limited by a ``back reaction'' in which $2X$ returns to $A+X$.  
+
+According to the \emph{law of mass action} of chemical kinetics, the rate of an elementary reaction is proportional to the product of the concentrations of the reactants (this is called a ``law'' but is actually a model).  We denote the concentration by lowercase $x=]X]$ and $a=[A]$.  Assume that there's an enormous surplus of chemical $A$, so that its concentration $a$ can be regarded as constant.  Then the equation for the kinetics of $x$ is 
+\[\dot{x} = k_1 a x - k_{-1}x^2\] where $k_1$ and $k_{-1}$ are positive parameters called rate constants (these are found empirically).
+\begin{parts}
+\part By hand, find all the fixed points of this equation and classify their stability.  Show your calculation steps, or title and label your graph clearly.
+\item Sketch (by hand) approximate graphs of $x(t)$ for various initial values $x_0$.  Include all of the qualitatively different cases.
+\item In your Mathematica file, add a new section label and some text to identify this problem and describe what you're doing in your code.  Then create Mathematica cells that find the fixed points and do the linear stability calculation steps.  Include a screenshot of the code and its output in your Gradescope submission.  The relevant code is in section 2.4
+\end{parts}
+
+\question Suppose $X$ and $Y$ are two species that reproduce exponentially fast: $\dot X = aX$ and $\dot Y = bY$, with initial conditions $X_0, Y_0 > 0$ and growth rates $a > b> 0$.  Here $X$ is chosen to be 'fitter' than $Y$ in the sense that it reproduces faster ($a>b$).  We would expect $X$ to keep increasing its share of the total population $X+Y$ as $t\rightarrow \infty$.  
+
+\begin{parts}
+\item Let $x(t) = \dfrac{X(t)}{X(t)+Y(t)}$.  Find solutions for $X(t)$ and $Y(t)$, and use them to show that $x(t)$ increases monotonically, and approaches $1$ at $t\rightarrow\infty$.
+\item Alternatively, derive a differential equation for $x(t)$.  Take the time derivative of $x(t) = X(t)(X(t)+Y(t))^{-1}$ using the product (or quotient) and chain rules.  Substitute for $\dot X$ and for $\dot Y$ and show that $x(t)$ obeys the logistic equation $\dot x = (a-b)x(1-x)$.
+\item Explain why showing $\dot x = (a-b)x(1-x)$ implies that $x(t)$ increases monotonically and approaches $1$ as $t\rightarrow \infty$.
+\end{parts}
+
+\question A particle travels on the half-line $x\geq 0$ with a velocity given by $\dot x = -x^c$ where $c$ is real and constant.
+\begin{parts}
+\item Find all values of $c$ such that the origin $x = 0$ is a stable fixed point.
+\item Review the method of separation of variables for solving a differential equation.  Use separation of variables and an initial condition of $x(0) = 1$ to generate a solution to this differential equation.  Show your solution steps.
+\item Now assume that $c$ is chosen so that $x = 0$ is stable.  Are there values of $c$ where the particle reaches the origin in \emph{finite} time. Specifically, how long does it take for the particle to travel from $x=1$ to $x=0$, as a function of c?
+\item In your Mathematica file, add a new section label and some text to identify this problem and describe what you're doing in your code.  Then create Mathematica cells that find the exact solution (rather than a numerical approximation to the solution).  If possible, make a plot of the solution for a case where the particle reaches the origin in finite time.  Include a screenshot of the code and its output in your Gradescope submission.  The relevant code to modify is in the Extra section at the end of the file.
+\end{parts}
+
+% \question Let \[\dot{x} = rx - \frac{x}{1+x^2}.\]
+% Show your mathematical steps or reasoning for each part.
+% \begin{parts}
+% \part Compute the values of $r$ at which bifurcations occur.  Do this by hand, showing your manipulation steps.
+% \part Classify the bifurcations as saddle-node, transcritical, supercritical pitchfork, or subcritical pitchfork (providing the mathematical reasoning behind your classifications).
+% \part Sketch the bifurcation diagram of fixed points $x^*$ vs $r$.
+
+% \end{parts}
+% \question 
+
+% Consider the system $\dot{x} = rx - \sin x$. 
+% \begin{parts}
+% \item For the case $r=0$, find and classify all fixed points of the system, and sketch the phase portrait on the $x$-axis.
+% \item For $r>1$ show that there is only one fixed point, and classify it.
+% \item As $r$ decreases from $\infty$ to $0$ classify \textbf{all} of the bifurcations that occur.  
+
+% \emph{Hint: To think about this, plot $\sin x$ and $r x$ on the same axes.  Using a tool, such as Desmos (or Manipulate within Mathematica) that allows you to manipulate $r$ will allow you to see when bifurcations occur.}  Remember to label all plots that you include in your write-up.
+% \item For $0<r\ll 1$, find an approximate formulate for values of $r$ at which bifurcations occur.  
+
+% \emph{Hint: For small $r$, note that bifurcations occur with $\sin x \approx 1$ or $\sin x \approx -1$.  This observation will allow you to approximate $x$ and then $r$.}
+% \item Plot the bifurcation diagram for $-\infty < r < \infty$, and indicate the stability of the various branches of fixed points.
+% \end{parts}
+% \question Head to Piazza
+% \begin{parts}
+% \part Find the `pset01 LaTeX` post.  Add a comment to the post.  To enter math into Piazza, we can use LaTeX commands, a mark-up language for mathematics.  In your post, include
+% \begin{verbatim}
+% $$\dot{x} = r x - \frac{x}{1+x^2}$$
+% \end{verbatim}
+% In addition, head to \url{https://rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf} and choose a second LaTeX command to try out in your post.  Feel free to post links to other LaTeX resources that you're familiar with if you like.
+% \part Find the `pset 01 projects' post.  Add a comment to the post.  In your comment briefly describe a topic area you would enjoy thinking about or a question you already know you might like to explore.  No need to reflect on whether it seems specifically relevant to this class; whatever you have on your mind as a possible question is fine for this.
+% \end{parts}
+
+
+% \question \begin{parts}
+% \part Install Mathematica on your computer or find a public computer that you can regularly access on which Mathematica is installed.  To install the software on your machine, go to \url{https://downloads.fas.harvard.edu/download} and follow the instructions for Mathematica.  If you run into difficulties, HUIT is a helpful resource.
+% \part Create a new Mathematica notebook and name it Lastname\_Firstname\_pset01.nb (using your own names...) My notebook would be \textt{Iams\_Sarah\_pset01.nb}.  In that notebook
+% \begin{enumerate}
+%     \item Go to Palettes $\rightarrow$ Writing Assistant and add a Title cell.  Enter a title for your notebook.
+%     \item Click below your title cell to leave the cell.  Now use the palette to add a Subtitle Cell as well and enter a subtitle.
+%     \item Click below your subtitle cell and just start typing.  Your are typing in a math cell (the default cell type).  In that cell enter the command \texttt{?Plot}.  Press shift and enter at the same time to execute the command in the cell.
+%     \item Click below the output to type in a new cell.  In that cell, you'll have multiple lines: \texttt{?Log}, \texttt{?Exp}, \texttt{?Sin}, and \texttt{?your choice here}.  Press enter at the end of each line to move to a new line within the cell.  Execute the commands in the cell.
+%     \item Click below the output so that you're in a new cell.  Use your writing palette to create a text cell.  In that cell, write out what the \texttt{?} command does.
+%     \item In a new cell, use the following plot command to plot two curves on the same axis:
+    
+%     \texttt{Plot[\{Exp[x],Cos[x]\},\{x,-Pi/3,Pi/3\}]}.
+%     \item On the second line of the cell, type in a second plot command:
+    
+%     \texttt{Plot[\{Exp[x],Cos[x]\},\{x,-Pi/3,Pi/3\}, AxesLabel->\{"X","functions"\}]}.
+    
+%     As you type the Ax of AxesLabel you should see a list of options pop up so that you can choose it from a list rather than typing it out (the helps you confirm that you're using an actual command).
+    
+%     \item On the third line type in a third plot command:
+    
+%     \texttt{Plot[\{Exp[x],Cos[x]\},\{x,-Pi/3,Pi/3\}, AxesLabel->\{"X","functions"\}, LabelStyle -> Medium, PlotStyle -> Thick]}
+    
+%     \item Make a text cell below the plots and briefly describe the differences between the three.
+    
+%     \item In a new cell, we'll generate two approximate numerical solution to a differential equation, and plot them (the line breaks below are to show the commands, not because there needs to be a linebreak within the command.  Mathematica doesn't care if there is, though).
+    
+%     The \texttt{;} on the end of a line suppresses showing its output, so the plots in p1 and p2 aren't being shown when those lines are executed.
+%     \begin{verbatim}
+% approxsoln1 = NDSolve[{x'[t] == Exp[x[t]] - Cos[x[t]], 
+% x[0] == 0.1}, x, {t, 0, 2}]
+% p1 = Plot[x[t] /. approxsoln1, {t, 0, 2}];
+% approxsoln2 = NDSolve[{x'[t] == Exp[x[t]] - Cos[x[t]], 
+% x[0] == -0.1}, x, {t, 0, 5}]
+% p2 = Plot[x[t] /. approxsoln2, {t, 0, 5}];
+% Show[p1, p2, PlotRange -> All]
+%     \end{verbatim}
+    
+% \item In a new cell, use \texttt{?} to look up \texttt{NDSolve}, \texttt{Show}, \texttt{/.}.
+% \item If you do further work on the problem set within Mathematica (optional), add a new subtitle cell to label that, and keep working within this notebook.
+% \item Save your notebook and submit it as part of your problem set.  
+% \end{enumerate}
+% \end{parts}
+
+% Assign 2.4.9 and 2.5.1 next week.
+
+%\question (2.4.9) \emph{This is one of those problems with a long backstory to explain the scientific ideas but only a small math problem at the end.  Bear with the backstory, or skip it if you're not interested.}
+%
+%Critical slowing down: In statistical mechanics, the phenomenon of ``critical slowing down'' is a signature of something referred to as a \emph{continuous phase transition} or a \emph{second-order phase transition}.
+%
+%You are likely familiar with phase transitions from solid to liquid or from liquid to gas.  Water transitions abruptly to ice at $0^\circ$ C and abruptly to vapor at $100^\circ$C.  A quantity called the \emph{free energy} of the system is continuous at the transition, but it has a discontinuous first derivative.  This kind of phase transition might be called an \emph{abrupt phase transition} and is also sometimes called a \emph{first order} phase transition.  The free energy is shown below plotted against temperature for a transition from liquid to gas with a transition point of $T_\nu$.
+%
+%\includegraphics[width = 2.5in]{PSet01p1.png} \emph{Diagram from Sethna.  Entropy, Order Parameters, and Complexity. 2006, p. 242}
+%
+%You may be less familiar with continuous phase transitions.  
+%
+
+\end{questions}
+
+
+\end{document}

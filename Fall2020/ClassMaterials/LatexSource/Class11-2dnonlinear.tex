@@ -1,0 +1,171 @@
+\documentclass[12pt,letterpaper,noanswers]{exam}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[margin=0.9in]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{multicol}
+\pagestyle{head}
+\header{AM 108 Class 11}{}{More 2d nonlinear systems (page \thepage)}
+\runningheadrule
+\headrule
+
+\usepackage{graphicx} % more modern
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+
+\begin{document}
+ \pdfpageheight 11in 
+  \pdfpagewidth 8.5in
+
+\noindent 
+
+
+
+
+
+\begin{itemize}
+\itemsep0em
+    \item There is a problem set due Friday Oct 2nd.
+    \item There will be a two question skill check on Friday.  The question info is below.
+    \item There is not a pre-class assignment for Friday.
+    \item Find office hours info on the Canvas page.
+\end{itemize}
+
+\hrule
+\vspace{0.2cm}
+
+
+
+
+
+\noindent\textbf{Teams}
+
+\begin{multicols}{2}
+1. 
+
+\end{multicols}
+
+\noindent \textbf{Teams 1 and 2}: Post screenshots of your work to the course Google Drive today.  Include words, labels, and other short notes that might make those solutions useful to you or your classmates.  Find the link in Canvas (or here: \url{https://drive.google.com/drive/u/0/folders/1GcpwvKHD4tMecpFQ4lNxN_r5Ylj7YHbd})
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+
+\noindent\textbf{Polls}
+
+poll1: class days contributing to pset content.
+
+poll2: ice breakers / intros for new groups
+
+\noindent\textbf{Notes}
+
+due dates: it's fine if you submit in local time (but there's not an easy way for me to input it).
+
+midnight vs 5pm: the college's advice is 5pm (to promote work/life balance?)
+
+skill checks vs check yourself: subtly different - different purposes
+
+going over in-class activities: use `help' button to ask for feedback, or post what you're unsure about in \#classactivities on Slack
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+
+\noindent\textbf{Extra facts/vocab}
+
+\begin{tcolorbox}
+A system $\underline{\dot x} = \underline{f}(\underline{x})$is called \textbf{conservative} when there is a non-trival function of the phase space $I(\underline{x})$ that is \textbf{invariant} (constant) along flow curves (trajectories), i.e. \[\frac{d}{dt}I(\underline{x}) = I_x \dot x + I_y \dot y + ... = \nabla I \cdot \underline{\dot x} = \nabla I \cdot \underline{f} = 0\] 
+
+Notice (from $\nabla I \cdot \underline f = 0$) that $I$ is an \textbf{invariant} if it has a gradient everywhere normal to the vector field $f$.  Invariants are also called \textbf{conserved quantities}.  (copied from Meiss 2007, \underline{Differential Dynamical Systems}).
+
+A \textbf{phase curve} of a system $\dot x = f(x,y), \dot y = g(x,y)$ is a curve $y = Y(x)$ that obeys the differential equation $\frac{dY}{dx} = \frac{\dot y}{\dot x} = \frac{g(x,Y)}{f(x,Y)}$.  Trajectories that start on such a curve stay on it.  When $\frac{dy}{dx} = \frac{g(x,y)}{f(x,y)}$ is a separable differential equation, the process of solving it can also yield a conserved quantity.  \emph{Note that, for $y = Y(x)$, $\dot y = Y_x \dot x$.}
+\end{tcolorbox}
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+
+\noindent\textbf{Addressing your questions}
+
+\begin{enumerate}
+    \item We have $\dot x = Ax$ with $A = \left(\begin{array}{c c}3 & 0 \\ 0 & 2 \end{array}\right)$.  Why do trajectories leave the origin along the slow direction?  And how did he find the eigendirections?
+    \item For a diagonal matrix, how do you know the eigenvalues?
+    \item Are saddle points classified as stable or unstable?
+    \item Do all systems with a saddle point have a stable manifold?
+    \item How can we compute a basin boundary?
+    \item Why is the phase portrait of a saddle point considered to be structurally stable?
+\end{enumerate}
+
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+
+\noindent\textbf{Skill Check C12 practice}
+\begin{questions}
+
+\item Retake of Skill Check C09 on matching a 2D linear system (with eigenvector solutions provided) to a phase portrait.  See the C08 handout for the sample question.
+
+\item For the system $\dot x = y, \dot y = x^3-x$, compute $\dfrac{dE}{dt}$ along trajectories for $E =-2 x^2 - 2y^2 + x^4$.
+
+\emph{Show your computational steps}
+\end{questions}
+
+\vspace{0.2cm}
+
+\hrule
+\vspace{0.2cm}
+
+\noindent\textbf{Skill Check C12 practice solution}
+\begin{enumerate}
+\item $E(x,y) = -2x^2 - 2y^2 + x^4.$
+\item $\dfrac{dE}{dt} = -4x \dot{x} - 4y\dot{y} + 4x^3\dot x$ (used the chain rule to take the derivative on the right hand side)
+\item $\dfrac{dE}{dt} = -4x(y) - 4y(x^3-x) + 4x^3(y)$ (substitute $\dot x = y$ and $\dot y = x^3-x$, as these differential equations are true on trajectories)
+\item $\dfrac{dE}{dt} = 0$ (simplify the expression on the right hand side)
+\end{enumerate}
+
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+
+\begin{questions}
+\item (6.4.4) Consider the population model
+  \begin{align*}
+ \dot{N_1} = & r_1 N_1 - b N_1 N_2 \\
+ \dot{N_2} = & r_2 N_2 - b_2 N_1 N_2,
+ \end{align*}
+ with $r_1, r_2, b_1, b_2 > 0$.
+ 
+ %This model has a growth term for each species, as well as some impact of competition on each species.  
+ \begin{parts}
+ \item How does the population of each species evolve in time if the other were extinct?  Is this a predator-prey interaction or a competition interaction?
+ \item The model nondimensionalizes to 
+  \begin{align*}
+ x' = & x - x y \\
+ y' = &y(\rho - x).
+ \end{align*}
+ \emph{This nondimensionalization requires assuming that each population has its own units, so number of rabbits and number of sheep were each be assigned their own unknown constant in the nondimensionalization process.}
+
+Using the nondimensional system, find an expression satisfied by most phase curves.  %show that almost all trajectories have phase curves of the form $\rho \ln x - x = \ln y -y + C$.
+ \emph{Solve a separable differential equation to do this.  You don't need to write it in the form $y = Y(x)$; an implicit relationship between $x$ and $y$ is fine.}
+ 
+ \item Argue that the quantity $H(x,y) = y - \ln y + \rho \ln x - x$ is almost always conserved.
+ 
+ \textit{Which trajectories don't work with this function?}
+
+\end{parts}
+\end{questions}
+
+\eject
+
+\textbf{Answers}
+
+1a: exponential growth in each case.  The interaction is competitive.
+
+1b: $\frac{dy}{dx} = \frac{\dot y}{\dot x} = \frac{y(\rho-x)}{(x-xy)} = \frac{y}{1-y}\frac{\rho-x}{x}.$  Separating, $\frac{1-y}{y} dy = \frac{\rho-x}{x}dx$ so $(\frac{1}{y} - 1)dy = (\frac{\rho}{x} -1) dx$.  Integrating each side, $\ln\vert y\vert - y = \rho\ln\vert x\vert - x + C$.  This is a relationship between $x$ and $y$ that holds along phase curves.
+
+1c: $\frac{dH}{dt} = \dot{y} - \frac{1}{y}\dot{y} + \frac{\rho}{x}\dot{x} - \dot{x} = \dot{y}(1- 1/y) + \dot{x}(\rho/x - 1) = y(\rho-x)(1-1/y) + (x-xy)(\rho/x - 1) = (\rho-x)(y-1) + (1-y)(\rho-x) = 0$, so this quantity is conserved whereever $H(x,y)$ is defined.  $H(x,y)$ is defined everywhere $x> 0$ and $y> 0$, so away from the axes.
+
+\end{document}

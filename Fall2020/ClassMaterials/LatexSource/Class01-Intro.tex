@@ -1,0 +1,233 @@
+\documentclass[12pt,letterpaper,noanswers]{exam}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[margin=0.9in]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{multicol}
+\pagestyle{head}
+\definecolor{c03}{HTML}{FFDDDD}
+\header{AM 108 Class 01}{Updated on \today.}{Introduction}
+\runningheadrule
+\headrule
+\usepackage{graphicx} % more modern
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+
+\begin{document}
+% \pdfpageheight 11in 
+%  \pdfpagewidth 8.5in
+
+% Names: \rule{2.5in}{0.5pt}
+% \vspace{0.2cm}
+
+% Goals: be exposed to a map.
+% Look at long term behavior.
+
+% Pre-work: define "is and element of", "the real numbers", and "maps to"
+%\begin{multicols}{2}
+
+
+
+
+% I need to review the torus trajectories...
+
+\begin{itemize}
+% \item There is a pre-class assignment (20 minutes of videos + a few WeBWorK exercises) due at 10am this Monday.  It is available on Canvas.
+\itemsep0em
+\item There is a pre-class assignment in advance of class on Friday Sept 4th.  Find the reading and videos via the Check Yourself C02 assignment on Canvas.
+\item The first problem set will be due on Friday Sept 11th. 
+\end{itemize}
+
+\hrule
+\vspace{0.2cm}
+
+% partial derivatives, gradient
+% local linearity, differential, directional deriv
+% 2nd order partials + equations with partials
+
+\noindent\textbf{Big picture}
+
+We will introduce the idea of a dynamical system along with two important types (maps and flows).  We will distinguish between linear and nonlinear systems and will introduce a core question that we will be tackling all semester.
+
+After today, the next few classes will focus on analyzing one-dimensional flows to identify (and interpret) the long term behaviors.
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+
+\noindent\textbf{Teams}
+
+You have been pre-assigned to a breakout room and team.  There is extra overhead to meeting a group remotely, so we will stay in the same teams for a few class meetings.
+
+\begin{multicols}{2}
+1. 
+\end{multicols}
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+
+
+\emph{Zoom poll 1: dynamical systems}
+
+\begin{tcolorbox}
+\textbf{Dynamical systems}.  In this course we will study \emph{dynamical systems}: systems that evolve in time, with a rule that specifies their evolution. 
+\end{tcolorbox}
+
+ Dynamical systems can have deterministic evolution rules (meaning that the current state of the system uniquely determines its future state) or can have evolution rules where randomness (stochasticity) is involved.  In this course we will learn about \emph{deterministic dynamical systems}.  In subjects such as differential equations, mechanics, chemical kinetics, and biology, dynamical models are used to describe, predict, and inform the control of the behavior of a time-evolving system.
+
+\vspace{1in}
+
+\begin{tcolorbox}
+\textbf{Team work}.  In the classroom, this course takes a team-based approach to learning.  
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Explicating your ideas for your peers while working to advocate for your own understanding will contribute to the development of your communication and collaboration skills within a technical context.
+    \item Your learning will be strengthened by your efforts to explain your ideas to others.
+    \item Your learning will be strengthened by working to understand the perspective of your classmate.
+    \item Approaching mathematical ideas in a team will expose you to a range of problem solving approaches.
+\end{itemize}
+\emph{Slack poll 1: \#classactivities channel}
+
+\vspace{1in}
+  
+
+ 
+
+\begin{tcolorbox}
+\textbf{Before Friday's class} There is a pre-class video assignment for Friday.
+\end{tcolorbox}
+This will be the only time this semester that there is a pre-class assignment for a Friday.  See Canvas for the assignment.  It is due by 1:20pm ET on Friday September 4th.  If possible, please submit it a few hours in advance of the class meeting.  Your discussion board posts with questions and comments will shape the information I share during the first part of class.
+
+\vspace{0.5cm}
+
+\noindent \textbf{Goals} for today:
+\begin{itemize}
+    \item Provide an explanation for the term "dynamical system"
+    \item Work collaboratively with another student
+    \item Develop reasoning to identify the possible long term behaviors that can occur in a particular dynamical system (the cosine map).  
+    \item Work to identify the qualitatively different types of long term behavior that occur in a particular dynamical system as we vary a parameter (population model).
+\end{itemize}
+
+\emph{Identifying, and interpreting, qualitatively different long term behaviors is the central question we will work on this semester.}
+
+
+\eject 
+
+\begin{enumerate}
+\item  Once you're in your breakout room, introduce yourself to your teammates.  
+
+\item Connect to Jamboard and find the right slide for your group.
+
+Head to the C01 jamboard \url{https://jamboard.google.com/d/1N_y-wNYbhnrBVlLcuQjoiYDlithAHa5D78aUhTX3SdU/viewer?f=0}.  
+
+Change slides (the slide changer is at the top) to find the slide (1 - 8) that corresponds to the number of your breakout group.
+
+To practice writing and to identify your group, write your own name in the corner of your group's jamboard slide.
+
+
+\item  (Map example) Consider the map $x\mapsto \cos x.$  ($x\in \mathbb{R}$ defines the {\it{state}} of the system).  Given an initial value, $x_0$, we have
+\begin{align*}
+x_1 &=\cos(x_0) \\
+x_2 &= \cos(x_1) \\
+\vdots
+\end{align*}
+
+Using your Jamboard as a shared whiteboard, work together on the following questions.  If you run out of space on your slide, take a screenshot, clear your work, and keep going on the same slide.
+
+\emph{You can zoom in to a part of the slide to work, so that your work is more compact.}
+
+\begin{itemize}
+\item Select a starting value for $x_0$ and try iterating this map.  \emph{You may use a calculator to do this exactly or a graph of $\cos x$ to do this approximately}.  Plot a time series of the iterates ($x_k$ vs $k$).  What happens?
+
+\emph{Use dots for your plot, rather than a connected line or curve.  Why?}
+\item How does your starting value of $x$ matter?
+\item  Identify the group member whose birthday is closest to today.  Have them post on Slack about your group's approach and reasoning.  Compare it with the reasoning developed in that group.
+\end{itemize}
+
+\item (Simple population model) In a simple linear model of population, the population at the next timestep, $x_{n+1}$, is modeled as a constant multiple (use constant $a$ with $a>1$) of the population at this timestep, $x_n$.
+\begin{itemize}
+\item Write down an equation relating $x_{n+1}$ to $x_n$.  This equation is linear in $x_n$.  What does that mean?
+\item Let the initial population be $x_0 = b$ with $b \in (0,\infty)$.  Find formulas for $x_1$ and for $x_n$ in terms of $b$ and $a$.
+\item What happens to $x_n$ at long times?
+\item Critique this as a population model.  Based on your prior knowledge, when could you imagine it might be reasonable and when would it not be?
+\item Now remove the constraint that $a>1$ on $a$.  Let $a \in \mathbb{R}$.  What
+different behavior do you see as you change $a$?  Describe all of the possibilities. 
+\item When do you think different values of $a$ might be more or less appropriate for a population model?  Justify your
+answer.
+\end{itemize}
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+
+\begin{tcolorbox}
+Consider $x_{n+1}-x_n$, the change in the state of the system with a single timestep.  In this \textbf{linear system} the change is proportional to the value of $x_n$.  As $x_n$ changes, the constant of proportionality is not changing.  We will refer to this as not having a \textbf{feedback} in the system.
+\end{tcolorbox}
+
+
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+
+\item
+ (Ordinary differential equation population model) Now we switch away from maps (where time was discrete) to a (differential equation) population model where time is continuous (a \textbf{flow}).  We will work with continuous models for much of the semester. 
+
+Instead of using discrete
+generations, we make the assumption that the population grows continuously at a rate $\alpha$.
+\[\frac{dN}{dt} = \alpha N\] describes the rate of change in population with time.  Note: We will
+often write $\dot{N}$ in place of $\frac{dN}{dt}$.  
+
+The rate of change per person is $\frac{dN/dt}{N} = \alpha$.  This is an extremely simple population model: the rate of change in population per member of the population is assumed to be constant, rather than depending on how many individuals are in the population.  This means that whether the population is large or small the growth rate per member is fixed.
+\begin{itemize}
+\item Plot $\frac{dN/dt}{N}$ as a function of population, $N$.  What does $\frac{dN/dt}{N}$ represent in the context of the model?  
+% \item Describe this equation: linear/nonlinear, autonomous/nonautonomous, order of the equation.
+\item Show that $N(t) = N_0 e^{\alpha t}$ is a solution of this differential equation, and graph a time series of this solution for a few values of $N_0$ and $\alpha$.  \emph{To show that an expression is a solution to an equation, plug the expression in and show that the equation then holds.}  \textbf{Don't approach this by solving for the solution of the diff eq.}
+\item What is the long term behavior of the population?  
+\item How does this compare to the behavior of the discrete model above?
+\end{itemize}
+% \item (Logistic population model)
+% \[\frac{dN}{dt} = \alpha N ( 1 - N/K)\] with $\alpha, K>0$.  This is called the {\it{logistic equation}}.  It also has a discrete analog, which we will not work with until later in the semester.
+% %It is a {\it{nonlinear differential equation} }
+% %because the right hand side is a nonlinear function of $N$ (meaning
+% %that it is not of the form $ m N + b$ for some $m$ and $b \in \mathbb{R}$).
+% \begin{itemize}
+% \item Plot $\displaystyle\frac{dN/dt}{N}$ vs $N$ for this equation (use $K$ and $\alpha$ as axis markings to indicate scale along the axes).  Compare this to the model above.  
+% \item Now make new axes and graph $\displaystyle\frac{dN}{dt}$ as a function of $N$.  Mark $K$ on your horizontal axis and $\alpha$ on your vertical axis.
+% \item Consider $N$ in the range $(0,K)$ (so $N\in(0,K)$).  Use your graph to identify population sizes where the population would increase with time and those where it would decrease with time.  How can you tell?
+% \end{itemize}
+
+\end{enumerate}
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+
+\begin{tcolorbox}
+\textbf{Technical terms}:  dynamical system, deterministic, stochastic, map, system state, long term behavior, initial condition, qualitative, discrete, continuous, differential equation
+\end{tcolorbox}
+
+\eject
+
+\begin{tcolorbox}
+Only a few kinds of long term behavior of a solution are possible in the linear systems we have encountered today:
+\begin{itemize}
+\itemsep0em
+    \item exponential decay towards a particular value
+    \item exponential growth
+    \item starting and staying at a fixed value
+    \item in the map example, oscillation while doing one of the above was also possible
+\end{itemize}
+
+In the reading/videos for Friday's class, you will see examples of nonlinear systems.  Many more possible behaviors exist in nonlinear systems.  Our analysis of those systems will rely on linear approximation.  Thus the intuition that linear systems show exponential growth or exponential decay of solutions will be helpful for understanding nonlinear systems as well.
+
+\end{tcolorbox}
+
+
+
+
+
+\end{document}
