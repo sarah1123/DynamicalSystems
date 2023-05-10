@@ -1,0 +1,62 @@
+26 January 2022
+
+polls
+
+what are your questions about grading in this course?
+
+what questions about the material are on your mind before we start working?
+
+
+(read up to 8:54am).
+
+Student questions from sections 2.1-2.7
+
+1) Taylor series / linear approximation
+- are we only working with analytic functions?
+- when will we use them (should I brush up on them)?
+- why is linearizing important?  we could use graphical methods / plugging into the function to learn about a particular zero crossing, so what is useful about linearizing?
+- is there a quantitative way to analyze the fixed point when f'(x*) == 0? (the case where it could be weakly stable, weakly unstable, or half stable?)
+- which terms can be neglected?  why?
+- how does linearization relate to Taylor series?
+- When we linearize we get exponential growth / decay, but do the deviations frow exponentially fast?
+- what is algebraic relaxation vs exponential relaxation?
+- are we finding x'' = f'(x*) and checking its value?
+- what do we consider a small perturbation (any perturbation that doesn't hit the next fixed point?) vs a larger perturbation?
+- why don't we reach a fixed point in finite time?
+
+2) existence and uniqueness
+- are fixed points not unique solutions to a first order system?  (SI: we are always going to think of the bucket emptying example...)
+- continuity of f(x) and f'(x) are key to existence and uniqueness.  will we have to prove continuity?
+- he said something about reaching a point in finite time.  what is the implication / relevance of this?
+- when the solution exists, why is it centered around $t = 0$?
+
+3) impossibility of oscillations
+- how will this play out as we add more dimensions?
+- didn't we see an example of a damped oscillator?  (perhaps you're thinking of the map that we worked with)  Sounds like the student may be thinking $\dot{x} = \sin x$ is an equation for an oscillator...
+- just feeling doubtful that oscillation really is impossible (as Cyrus says it would require the vector field at a point be directed in opposite directions at different times)
+- what does the vector field being "well-defined" have to do with the impossibility of oscillation.
+
+
+4) logistic example
+- r and $$\dot{x}$$ are both being refered to as growth rates.  These are different, right?
+
+5) position, velocity, acceleration, and the derivative of f(x)
+- how does f'(x) relate to acceleration?  (SI: this is a very common error - not sure how to help students avoid it...)
+
+6) half stable
+- are all the points we pass through on the way towards a fixed poing half-stable (SI: we will only classify fixed points themselves)
+
+
+New vocab
+monotonic
+blow up
+half stable
+characteristic time scale
+phase portrait
+stable fixed point
+unstable fixed point
+
+
+Extra notes:
+- students get very caught up in the half-stable fixed point (how to identify it analytically, etc).
+- remember to introduce hyperbolic vs non-hyperbolic and to share that we care about classifying fixed points as either hyperbolic of non-hyperbolic.  Then if it is hyperbolic we will think about stability.  If it is non-hyperbolic, it is a pretty special, non-generic, fixed point and something something.
