@@ -131,9 +131,9 @@ Index theory:
 
 1. [Isolated closed trajectories (limit cycles)](https://www.youtube.com/embed/O2fcpxLT5wk?start=3920&end=4426&autoplay=1)  |  (8 min)
 
- Showing a limit cycles exists:
+  Showing a limit cycles exists:
 
-1. [Showing there must be a limit cycle in some region](https://www.youtube.com/embed/nWO74rlr58Y?start=1714&end=2613&autoplay=1)  |  (15 min)
+2. [Showing there must be a limit cycle in some region](https://www.youtube.com/embed/nWO74rlr58Y?start=1714&end=2613&autoplay=1)  |  (15 min)
 1. [Finding such a region in a polar example](https://www.youtube.com/embed/nWO74rlr58Y?start=2613&end=3060&autoplay=1)  |  (7 min)
 1. [Glycolysis: a non-polar example](https://www.youtube.com/embed/nWO74rlr58Y?start=3067&end=3995&autoplay=1)  |  (15 min)
 1. optional: [Additional details of the example](https://www.youtube.com/embed/nWO74rlr58Y?start=3995&end=4611&autoplay=1)  |  (10 min)
