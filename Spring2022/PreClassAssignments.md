@@ -1,7 +1,7 @@
 # Pre-class assignments
 
 ## 1D
-### Class 02
+### Class 02: linearization
 
 Book sections 2.1-2.4, 2.6 (the text has additional examples not included in the videos).
 
@@ -22,7 +22,7 @@ Watch L2 [video](https://www.youtube.com/embed/YNIm2Op7UPg?start=29&end=1940&aut
 Total time:
 48 minutes
 
-### Class 04
+### Class 04: bifurcations
 
 Book sections 3.0-3.4
 
@@ -45,7 +45,7 @@ Additional resource:
 
 Chapters 7.1 - 7.6 Links to an external site. of Prof Ghrist's video text are on similar content, if you'd like to look at another resource.  Note that Steve plots bifurcations in the mu x-plane and Prof Ghrist is plotting them in the x mu-plane, so the diagrams will look rotated.
 
-### Class 05
+### Class 05: dimension
 
 The dimension and non-dimensionalization videos below include ideas that arise in section 3.5 (but we are skipping the bead on a hoop example that is presented in the text).
 
@@ -59,7 +59,7 @@ Bistability and the spruce budworm example are mainly in 3.7 with a bit in 3.6.
 
 46 minutes total.
 
-### Class 07
+### Class 07: 1d flows on a circular phase space
 
 The oscillation videos are closely related to sections 4.0-4.3 and 4.5.
 
@@ -77,7 +77,7 @@ The oscillation videos are closely related to sections 4.0-4.3 and 4.5.
 
 ## 2D
 
-### Class 08
+### Class 08: on to 2d
 
 The videos focus on sections 5.0-5.2.
 
@@ -89,7 +89,7 @@ optional: Eigenvectors [video](https://www.youtube.com/watch?v=xma6fPLm7nI). | (
 1. Phase portraits for linear systems [video](https://www.youtube.com/embed/QrHRaA93Nrg?start=1330&end=2145&autoplay=1). | (13 min)
 1. Saddle points [video](https://www.youtube.com/embed/QrHRaA93Nrg?start=2135&end=2557&autoplay=1). | (7 min)
 
-### Class 10
+### Class 10: more 2d
 
 The videos are for sections 5.2, 6.1-3
 
@@ -105,7 +105,7 @@ Steve's lectures on linear systems for section 5.2 (the book may be easier to fo
 1. Does linearizing work for classifying fixed points? [video](https://www.youtube.com/embed/9yh9DmNqdk4?start=550&end=907&autoplay=1)  |  (6 min)
 (optional) An attempt at summarizing linearization about a fixed point [video](https://www.youtube.com/watch?v=fApu3bpnVgc) | (9 min)
 
-### Class 11
+### Class 11: nonlinear 2d + intro to conservative
 
 The first two videos focus on ideas from section 6.4.  I also introduce the topic of section 6.5 (and do not recommend reading section 6.5)
 
@@ -115,5 +115,20 @@ The first two videos focus on ideas from section 6.4.  I also introduce the topi
 
 37 minutes of video
 
+### Class 15: index theory
+
+### Class 16: limit cycles
+
+### Class 17: van der Pol oscillator
+
+### Class 18: bifurcations in 2d
+
+### Class 19: subcritical Hopf + collision of limit cycles
+
+### Class 22: two global bifurcations 
 
 ## 3D + maps + chaos
+
+### Class 24: Lorenz '63 equations
+
+### Class 25: Lorenz and symbolic dynamics
