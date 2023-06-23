@@ -118,25 +118,25 @@ The first two videos focus on ideas from section 6.4.  I also introduce the topi
 ### Class 15: index theory
 
 Index theory:
-1. [Rotation of the vector field along a closed curve]()  |  (9 min)
-1. [Calculating the index: examples]()  |  (8 min)
-1. [Properties of the index]()  |  (20 min)
-1. [Index of fixed points with Det < 0 vs with Det > 0.]() | (6 min)
-1. [Theorem: Any closed trajectory must enclose a fixed point ]() |  (8 min)
-1. Optional: [Index theory on salamander arms + some topological ideas]()  |  (9 min)
+1. [Rotation of the vector field along a closed curve](https://www.youtube.com/embed/O2fcpxLT5wk?start=22&end=0576&autoplay=1)  |  (9 min)
+1. [Calculating the index: examples](https://www.youtube.com/embed/O2fcpxLT5wk?start=576&end=1027&autoplay=1)  |  (8 min)
+1. [Properties of the index](https://www.youtube.com/embed/O2fcpxLT5wk?start=1027&end=2250&autoplay=1)  |  (20 min)
+1. [Index of fixed points with Det < 0 vs with Det > 0.](https://www.youtube.com/embed/O2fcpxLT5wk?start=2250&end=2584&autoplay=1) | (6 min)
+1. [Theorem: Any closed trajectory must enclose a fixed point ](https://www.youtube.com/embed/O2fcpxLT5wk?start=2822&end=3301&autoplay=1) |  (8 min)
+1. Optional: [Index theory on salamander arms + some topological ideas](https://www.youtube.com/embed/O2fcpxLT5wk?start=3350&end=3903&autoplay=1)  |  (9 min)
 
 51 minutes of video
 
 ### Class 16: limit cycles
 
-1. [Isolated closed trajectories (limit cycles)  |  (8 min)
+1. [Isolated closed trajectories (limit cycles)](https://www.youtube.com/embed/O2fcpxLT5wk?start=3920&end=4426&autoplay=1)  |  (8 min)
 
  Showing a limit cycles exists:
 
-1. [Showing there must be a limit cycle in some region]()  |  (15 min)
-1. [Finding such a region in a polar example]()  |  (7 min)
-1. [Glycolysis: a non-polar example]()  |  (15 min)
-1. optional: [Additional details of the example]()  |  (10 min)
+1. [Showing there must be a limit cycle in some region](https://www.youtube.com/embed/nWO74rlr58Y?start=1714&end=2613&autoplay=1)  |  (15 min)
+1. [Finding such a region in a polar example](https://www.youtube.com/embed/nWO74rlr58Y?start=2613&end=3060&autoplay=1)  |  (7 min)
+1. [Glycolysis: a non-polar example](https://www.youtube.com/embed/nWO74rlr58Y?start=3067&end=3995&autoplay=1)  |  (15 min)
+1. optional: [Additional details of the example](https://www.youtube.com/embed/nWO74rlr58Y?start=3995&end=4611&autoplay=1)  |  (10 min)
 
 45 minutes + 
 10 optional limit cycle minutes
