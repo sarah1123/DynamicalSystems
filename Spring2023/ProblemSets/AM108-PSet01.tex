@@ -1,0 +1,321 @@
+\documentclass[12pt,letterpaper]{exam}
+%\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[margin=0.9in]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{multicol}
+\pagestyle{head}
+\definecolor{c02}{HTML}{FFBBBB}
+\definecolor{c03}{HTML}{FFDDDD}
+\header{AM 108 Problem Set 01}{Updated on \today.}{{\colorbox{c02}{\makebox[3.0cm][l]{Due Fri Feb 03}}}\\ at noon p.\thepage}
+\runningheadrule
+\headrule
+\usepackage{diagbox}
+\usepackage{graphicx} % more modern
+%\usepackage{subfigure} 
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+%\usepackage{gensymb} 
+%\usepackage{natbib}
+\usepackage{hyperref}
+%\usepackage{enumitem}
+%\setlength{\parindent}{0pt}
+%\usepackage{setspace}
+%\pagestyle{empty}  
+%\newcommand{\Sc}[0]{
+%{\color{BlueViolet}\S}
+%}
+\usepackage{tcolorbox}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+% \renewcommand{\labelenumii}{\theenumii}
+% \renewcommand{\theenumii}{\theenumi-\arabic{enumii}.}
+
+\newif\ifprintselans
+\printselanstrue
+%\printselansfalse
+\newenvironment{selans}
+{\ifprintselans
+   \printanswers
+   \renewcommand{\solutiontitle}{\noindent\textbf{Answer:}\par\noindent}
+ \fi
+}
+{}
+
+\newif\ifprintselsol
+%\printselsoltrue
+\printselsolfalse
+\newenvironment{selsol}
+{\ifprintselsol
+   \printanswers
+   \renewcommand{\solutiontitle}{\noindent\textbf{Solution:}\par\noindent}
+ \fi
+}
+{}
+
+
+\begin{document}
+ \pdfpageheight 11in 
+  \pdfpagewidth 8.5in
+
+\noindent\textbf{Problem Set Instructions:}  
+\begin{itemize}
+\itemsep0pt
+\item In your first attempt of the problem set problems, you are encouraged to treat the problem set as an open-notes quiz.  Work on it without consulting classmates, Ed, course staff, other people, other internet resources, or any solutions or answers.  Work on each problem, completing as much as you are able to, and making a note in your work whenever you become stuck or confused.
+\item After your initial individual attempt, collaboration is encouraged (see guidelines below) as you continue to work on the problems.  You'll submit a pdf of this work as part of your problem set submission on Gradescope (and will also submit it on Canvas).
+\item Submit the pdf of your problem set work with the problems written up in order (computational work can be at the end of the pdf) on Canvas and access the solutions.
+\item Complete the reflection questions below, and submit that reflection work, along with your problem set pdf, on Gradescope.
+\end{itemize}
+  
+\noindent\textbf{Submission Instructions:}  
+\begin{itemize}
+\item Following the instructions above, upload a pdf of your work to Canvas.  Upload your reflection answers and the pdf to Gradescope.
+\item If you would like to use mathematical software other than Mathematica, that's fine. 
+\end{itemize}
+
+\noindent\textbf{Late Work Policy:}
+\begin{itemize}
+\itemsep0pt
+\item Problem sets are accepted up to eight hours late with no penalty (8pm Friday). 
+\item Three 36 hour late days are available to every student (three extensions to 8pm on Saturday).  These late days are expected to be used for unexpected illness or other conflicts.
+\item Additional late days are not typically 
+available.
+\item Problem sets are not accepted beyond the late deadline.
+\end{itemize}
+
+\noindent\textbf{Collaborating on Problem Sets:}  
+
+\noindent Collaborating with classmates in planning and designing solutions to homework problems is encouraged.  Collaboration, cooperation, and consultation can all be productive.  Work with others to: 
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item discuss the problem
+    \item brainstorm
+    \item walk through possible strategies
+    \item outline solution methods
+\end{itemize}   
+\end{multicols}
+
+\noindent For homework, you may consult or use:
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item Course text (including answers in back)
+    \item Your notes (taken during class)
+    \item Class notes of other students
+    \item Course handouts
+    \item Canvas posts/Ed posts
+    \item Computational tools such as Python, Mathematica, or Desmos
+    \item Calculators
+    \item Other books
+    \item the Internet
+\end{itemize}
+\end{multicols}
+
+\noindent You may:
+\begin{itemize}
+    \item Look at communal work while writing up your own solution
+\end{itemize}
+
+\noindent You may \textbf{not}:
+\begin{itemize}
+\itemsep-0.2em
+    \item Look at the individual work of others while writing up your own solutions
+    \item Post about problems online
+\end{itemize}
+
+
+\noindent Do \textbf{not} consult the following resources until after you think you have solved a problem, have fully written up your answer, and have submitted a pdf of your work to Canvas.
+%\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item The text solution manual
+    \item The posted solutions
+    \item Other solutions (from previous years, from sites like Chegg or Math Stackexchange, etc)
+\end{itemize}
+%\end{multicols}
+
+
+%\eject
+
+
+% \begin{enumerate}
+% \item Reflection questions
+
+\section*{Reflection questions}
+Submit these on Gradescope.
+\begin{enumerate}
+\item When you worked on the problems individually, how did they go?  Where did you get stuck or confused?  What additional progress were you able to make when you consulted other people or additional resources? How did your work compare to the posted solution?
+\item For any problems you were not able to complete, what made them difficult to complete?  What did you learn from the posted solution?
+\item What aspects of the course challenged you this week?  What did you do to address those challenges?  What topics/ideas/procedures do you not yet understand?
+\item What did you understand the best this week?  What, if anything, do you understand better this week than you did in the past?
+\item List the people that you worked with or consulted on the problem set problems.  This might include other students in the course, course instructors, or people who have previously taken the course.
+\item Below, indicate how much of your time for this class has been doing the following activities:
+	\begin{enumerate}
+	\item Working on problem set problems or other practice problems alone
+	\item Reviewing course materials, including problem set solutions, alone
+	\item Working on problem sets, reviewing notes, or discussing course topics with your classmates
+	\item Working through supplementary materials
+	\item Going to office hours
+	\item Other (please specify)
+	\end{enumerate}
+
+\end{enumerate}
+% \end{enumerate}
+
+\section*{Problems}
+\begin{itemize}
+\itemsep0pt
+\item Submit a pdf of your work on Canvas before accessing the solutions.  
+\item Submit the pdf to Gradescope, as well, and tag those pages as \textbf{Question 7} of the problem set.
+\end{itemize}
+
+\noindent The following problems are similar to problems in the text.
+\begin{questions}
+\setcounter{question}{-1}
+\question (there is no submission for this question) 
+
+Go to \url{https://downloads.fas.harvard.edu/download} and follow the instructions for Mathematica.  After making your account, either install Mathematica on your computer or set up WolframCloud to run Mathematica in the cloud (Harvard has a subscription).
+
+If you run into difficulties with the installation, HUIT has been a helpful resource for students in the past, or you can use the cloud version.
+
+\question Consider the differential equation $\dot{x} = e^x - \cos x$.  
+\begin{parts}
+\item Sketch (by hand) $e^x$ and $\cos x$ vs $x$ on the same axes.  
+
+\emph{Note: For plots to be complete, they should be labeled with a title identifying what is being plotted as well as axis labels and axis tick/scale markings.}
+
+
+% \begin{tcolorbox}
+% Mathematica:
+% You can use Mathematica to plot two curves:
+% \begin{verbatim}
+% Plot[{Log[1 + x], x - 1}, {x, -Pi/2, Pi/2}, 
+%  AxesLabel -> {"x", "functions"}, 
+%  Ticks -> {{{-Pi/2, -Pi/2}, {0.1, "ex"}, {Pi/2, Pi/2}}, Automatic}, 
+%  LabelStyle -> Medium, PlotStyle -> Thick]
+% \end{verbatim}
+
+% Details to notice: 
+% \begin{itemize}
+%     \item To plot two curves at once, the pair of them is enclosed in \{ \}. 
+%     \item Ticks: You can set where axis tick marks happen.  The "ex" is to show you that you can choose a letter or a number.  In this example, Automatic is referring to the vertical axis, while the horizontal axis ticks are being set by hand.
+%     \item LabelStyle: default fonts are small and labelstyle fixes that for standard plots. 
+%     \item PlotStyle: Thickened lines help to make the curves more visible.
+% \end{itemize}
+% \end{tcolorbox}
+
+\item Use your sketch to approximately identify fixed points, to determine their stability, and to draw the phase portrait on the real line (include arrows and filled or open circles for fixed points, depending on their stability).
+\item For $x\ll 0$, how does $e^x$ behave?  Find an expression to approximate all fixed points for $x\ll 0$.  Also find their stability analytically (i.e. use linear stability analysis).
+\item Sketch a temporal plot by hand.  This is a graph of $x(t)$ vs $t$ (by hand) that includes a few qualitatively different cases.
+\end{parts}
+
+\question Consider the model chemical reaction 
+
+\[A+X \overset{k_1}{\underset{k_{-1}}\rightleftarrows} 2X\]
+
+in which molecule $A$ combines with molecule $X$ to form two molecules of $X$.  This means that the chemical $X$ stimulates its own production, a process called \emph{autocatalysis}.  This positive feedback leads to a chain reaction, which eventually is limited by a ``back reaction'' in which $2X$ returns to $A+X$.  
+
+According to the \emph{law of mass action} of chemical kinetics, the rate of an elementary reaction is proportional to the product of the concentrations of the reactants (this is called a ``law'' but is actually a model).  We denote the concentration by lowercase $x=]X]$ and $a=[A]$.  Assume that there's an enormous surplus of chemical $A$, so that its concentration $a$ can be regarded as constant.  Then the equation for the kinetics of $x$ is 
+\[\dot{x} = k_1 a x - k_{-1}x^2\] where $k_1$ and $k_{-1}$ are positive parameters called rate constants (these are found empirically).
+\begin{parts}
+\part By hand, find all the fixed points of this equation and classify their stability.  Show your calculation steps, or use graphical methods and title and label your graph clearly.
+\item Sketch a temporal plot (by hand).  This consists of approximate graphs of $x(t)$ vs $t$ for various initial values $x_0$.  Include all of the qualitatively different cases.
+\end{parts}
+
+
+\question Return to the problems above using Mathematica (or Python, if you prefer)
+\begin{parts}
+\item For question 1, remake the plots in (a) and (d).
+\begin{itemize}
+\itemsep-0.1em
+    \item Find the PSet01 Mathematica file in the Files section on Canvas.  Refer to this file for example code.
+    \item Copy and edit a section label and some text to label the work on this problem and to briefly describe what you're doing.
+    \item Make Mathematica cells for (a) and (d) by copying and editing code in the PSet01 Mathematica file (sections 2.2 and 2.8 are the ones that are relevant).
+    \item To make the plot in (a) Search `mathematica cosine' and 'mathematica exponential' to find the commands and their syntax.
+\end{itemize}   
+\item For question 2
+\begin{itemize}
+\item Add a new section label and some text to identify this problem and describe what you're doing in your code.
+\item Create Mathematica cells that find the fixed points and do the linear stability calculation steps.
+\item Choose specific positive parameter values, and make a temporal plot for those parameters using \texttt{NDSolve}.
+\end{itemize}
+\end{parts}
+Either add screenshots of your Mathematica work into your pdf, or print the work to pdf and add it to your work.  It is okay if Mathematica work is at the end of the pdf (just add a note about where to find it).
+
+\question %(based on 2.3.5) 
+
+Suppose $X$ and $Y$ are two species that reproduce exponentially fast: $\dot X = aX$ and $\dot Y = bY$, with initial conditions $X_0, Y_0 > 0$ and growth rates $a > b> 0$.  Here $X$ is chosen to be 'fitter' than $Y$ in the sense that it reproduces faster ($a>b$).  We would expect $X$ to keep increasing its share of the total population $X+Y$ as $t\rightarrow \infty$.  
+
+\begin{parts}
+\item Let $x(t) = \dfrac{X(t)}{X(t)+Y(t)}$.  Write down solutions for $X(t)$ and $Y(t)$, and use them to show that $x(t)$ increases monotonically, and approaches $1$ at $t\rightarrow\infty$.
+\item Alternatively, derive a differential equation for $x(t)$.  To do this, take the time derivative of $x(t) = X(t)(X(t)+Y(t))^{-1}$ using the product (or quotient) and chain rules.  Substitute for $\dot X$ and for $\dot Y$ and show that $x(t)$ obeys the logistic equation $\dot x = (a-b)x(1-x)$.
+\item Explain why showing $\dot x = (a-b)x(1-x)$ implies that $x(t)$ increases monotonically and approaches $1$ as $t\rightarrow \infty$.
+\end{parts}
+
+\question Let \[\dot{x} = rx - \frac{x}{1+x^2}.\]
+Show your mathematical steps or reasoning for each part.  Include screenshots of your code if you use Mathematica, and identify any other plotting tools you use as part of your writeup.
+\begin{parts}
+\part Sketch the locations of the fixed points vs $r$.  Show your algebraic work to find the fixed points.  \emph{Don't tackle the stability yet, just work on plotting what you've found for $x^*(r)$}.
+\part Compute the values of $r$ at which local bifurcations occur (i.e. $\frac{df}{dx} = 0$ at a fixed point).  Do this by hand, showing your algebraic steps.
+\part Create a bifurcation diagram of fixed points $x^*$ vs $r$ and classify any local bifurcations as saddle-node, transcritical, supercritical pitchfork, or subcritical pitchfork.  \emph{Make sure your reasoning about the stability of the fixed points is included.}
+\end{parts}
+
+
+
+% \question Consider the system $\dot{x} = rx - \sin x$. 
+% \begin{parts}
+% \item For the case $r=0$, find and classify all fixed points of the system, and sketch the vector field on the $x$-axis.
+
+% \emph{The sketch of a vector field is very similar to a phase portrait.  Think of $\dot x$ as vectors pushing flow along the $x$-axis.  A phase portrait shows the direction of the flow.  To sketch the vector field you would add magnitude information as well.  You would draw vectors pointing along the $x$-axis that are longer when $\dot x$ is bigger and shorter when $\dot x$ is smaller.}
+
+% \item For $r>1$ show that there is only one fixed point, and classify it.
+% \item As $r$ decreases from $\infty$ to $0$ classify \textbf{all} of the bifurcations that occur.  \emph{To think about this, plot $\sin x$ and $r x$ on the same axes.  Using a tool that allows you to manipulate $r$ will allow you to see when bifurcations occur.}  Remember to label all plots that you include in your write-up.
+% \item For $0<r\ll 1$, find an approximate formulate for values of $r$ at which bifurcations occur.  \emph{For small $r$, note that bifurcations occur with $\sin x \approx 1$ or $\sin x \approx -1$.  This observation will allow you to approximate $x$ and then $r$.}
+% \item Plot the bifurcation diagram for $-\infty < r < \infty$, and indicate the stability of the various branches of fixed points.
+% \end{parts}
+\question (This problem requires discussion board posts and will not otherwise be submitted) 
+
+Head to Canvas and to Ed 
+\begin{parts}
+\part On Ed, find the `pset01 LaTeX` post.  Add a comment to the post.  To enter math into Ed, we can use LaTeX commands, a mark-up language for mathematics.  To use LaTeX in Ed, put a single \$ around your latex math and it should render correctly.
+
+In your post, include
+\begin{verbatim}
+$\dot{x} = r x - \frac{x}{1+x^2}$
+\end{verbatim}
+
+In addition, head to \url{https://rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf} and choose a second LaTeX command to try out in your post.  Check that it has rendered correctly and edit your post so that it does.
+
+\part On Canvas, find the `pset01 LaTeX` discussion board.  Add a comment to the post.  To enter math into Canvas, we can also use LaTeX commands, but the integration is less smooth.  To access LaTeX:
+\begin{itemize}
+\item use the vertical dots in the formatting bar (the one with bold, italic, that stuff) and click on the $\sqrt{x}$ symbol
+    \item choose "Directly Edit LaTeX" (the switch at the bottom 
+    \item enter your latex commands (it should show a preview, so you can see if you've entered them correctly), and then choose "Done".
+\end{itemize}
+
+In your post, try a different LaTeX command from \url{https://rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf}.  
+
+Feel free to post links to other LaTeX resources that you're familiar with if you like.
+
+
+% \part Find the `pset 01 projects' discussion board.  Add a comment to the post.  In your comment briefly describe a topic area you would enjoy thinking about or a question you already know you might like to explore.  No need to reflect on whether it seems specifically relevant to this class; whatever you have on your mind as a possible question is fine for this.
+\end{parts}
+
+% Assign 2.4.9 and 2.5.1 next week.
+
+%\question (2.4.9) \emph{This is one of those problems with a long backstory to explain the scientific ideas but only a small math problem at the end.  Bear with the backstory, or skip it if you're not interested.}
+%
+%Critical slowing down: In statistical mechanics, the phenomenon of ``critical slowing down'' is a signature of something referred to as a \emph{continuous phase transition} or a \emph{second-order phase transition}.
+%
+%You are likely familiar with phase transitions from solid to liquid or from liquid to gas.  Water transitions abruptly to ice at $0^\circ$ C and abruptly to vapor at $100^\circ$C.  A quantity called the \emph{free energy} of the system is continuous at the transition, but it has a discontinuous first derivative.  This kind of phase transition might be called an \emph{abrupt phase transition} and is also sometimes called a \emph{first order} phase transition.  The free energy is shown below plotted against temperature for a transition from liquid to gas with a transition point of $T_\nu$.
+%
+%\includegraphics[width = 2.5in]{PSet01p1.png} \emph{Diagram from Sethna.  Entropy, Order Parameters, and Complexity. 2006, p. 242}
+%
+%You may be less familiar with continuous phase transitions.  
+%
+
+\end{questions}
+
+
+\end{document}

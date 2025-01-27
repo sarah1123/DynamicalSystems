@@ -1,0 +1,220 @@
+\documentclass[12pt,letterpaper,answers]{exam}
+%\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[margin=0.9in]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{multicol}
+\pagestyle{head}
+\definecolor{c03}{HTML}{FFDDDD}
+\header{AM 108 Problem Set 09}{}{{\colorbox{c03}{\makebox[3.0cm][l]{Due Fri Apr 7}}}\\ at noon}
+\runningheadrule
+\headrule
+\usepackage{diagbox}
+\usepackage{graphicx} % more modern
+%\usepackage{subfigure} 
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+%\usepackage{gensymb} 
+%\usepackage{natbib}
+\usepackage{hyperref}
+%\usepackage{enumitem}
+%\setlength{\parindent}{0pt}
+%\usepackage{setspace}
+%\pagestyle{empty}  
+%\newcommand{\Sc}[0]{
+%{\color{BlueViolet}\S}
+%}
+\usepackage{tcolorbox}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+\begin{document}
+ \pdfpageheight 11in 
+  \pdfpagewidth 8.5in
+
+
+\noindent\textbf{Problem Set Instructions:}  
+\begin{itemize}
+\itemsep0pt
+\item In your first attempt of the problem set problems, you are encouraged to treat the problem set as an open-notes quiz.  Work on it without consulting classmates, Ed, course staff, other people, other internet resources, or any solutions or answers.  Work on each problem, completing as much as you are able to, and making a note in your work whenever you become stuck or confused.
+\item After your initial individual attempt, collaboration is encouraged (see guidelines below) as you continue to work on the problems.  You'll submit a pdf of this work as part of your problem set submission on Gradescope (and will also submit it on Canvas).
+\item Submit the pdf of your problem set work with the problems written up in order (computational work should be included: it can be at the end of the pdf) on Canvas and access the solutions.
+\item Complete the reflection questions below, and submit that reflection work, along with your problem set pdf, on Gradescope.
+\end{itemize}
+  
+\noindent\textbf{Submission Instructions:}  
+\begin{itemize}
+\item Following the instructions above, upload a pdf of your work to Canvas.  Upload your reflection answers and the pdf to Gradescope.
+\item If you would like to use mathematical software other than Mathematica, that's fine. 
+\end{itemize}
+
+\noindent\textbf{Late Work Policy:}
+\begin{itemize}
+\itemsep0pt
+\item Problem sets are accepted up to eight hours late with no penalty (8pm Friday). 
+\item Three 36 hour late days are available to every student (three extensions to 8pm on Saturday).  These late days are expected to be used for unexpected illness or other conflicts.
+\item Additional late days are not typically 
+available.
+\item Problem sets are not accepted beyond the late deadline.
+\end{itemize}
+
+\noindent\textbf{Collaborating on Problem Sets:}  
+
+\noindent Collaborating with classmates in planning and designing solutions to homework problems is encouraged.  Collaboration, cooperation, and consultation can all be productive.  Work with others to: 
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item discuss the problem
+    \item brainstorm
+    \item walk through possible strategies
+    \item outline solution methods
+\end{itemize}   
+\end{multicols}
+
+\noindent For homework, you may consult or use:
+\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item Course text (including answers in back)
+    \item Your notes (taken during class)
+    \item Class notes of other students
+    \item Course handouts
+    \item Canvas posts/Ed posts
+    \item Computational tools such as Python, Mathematica, or Desmos
+    \item Calculators
+    \item Other books
+    \item the Internet
+\end{itemize}
+\end{multicols}
+
+\noindent You may:
+\begin{itemize}
+    \item Look at communal work while writing up your own solution
+\end{itemize}
+
+\noindent You may \textbf{not}:
+\begin{itemize}
+\itemsep-0.2em
+    \item Look at the individual work of others while writing up your own solutions
+    \item Post about problems online
+\end{itemize}
+
+
+\noindent Do \textbf{not} consult the following resources until after you think you have solved a problem, have fully written up your answer, and have submitted a pdf of your work to Canvas.
+%\begin{multicols}{2}
+\begin{itemize}
+\itemsep-0.2em
+    \item The text solution manual
+    \item The posted solutions
+    \item Other solutions (from previous years, from sites like Chegg or Math Stackexchange, etc)
+\end{itemize}
+%\end{multicols}
+
+
+%\eject
+
+
+% \begin{enumerate}
+% \item Reflection questions
+
+\section*{Reflection questions}
+Submit these on Gradescope.
+\begin{enumerate}
+\item \begin{enumerate}
+    \itemsep0pt
+    \item When you worked on the problems individually, how did each problem go?
+    \item Where did you get stuck or confused?  For any subpart where you were stuck or confused be specific.  \emph{For example 'I tried to use the hint for 3b, but I couldn't find a way to relate $r$ and $x$'.}
+    \item What additional progress were you able to make when you consulted other people or additional resources?
+    \item For each part of each problem, how did your work compare with the posted solution?  Identify similarities and differences.
+\end{enumerate}  
+\item For any problems you were not able to complete, what made them difficult to complete?  What did you learn from the posted solution?
+\item What aspects of the course challenged you this week?  What did you do to address those challenges?  What topics/ideas/procedures do you not yet understand?
+\item What did you understand the best this week?  What, if anything, do you understand better this week than you did in the past?
+\item List the people that you worked with or consulted on the problem set problems.  This might include other students in the course, course instructors, or people who have previously taken the course.
+\item Below, indicate how much of your time for this class has been doing the following activities:
+	\begin{enumerate}
+	\item Working on problem set problems or other practice problems alone
+	\item Viewing preclass materials or reviewing course materials, including problem set solutions, alone
+	\item Working on problem sets, reviewing notes, or discussing course topics with your classmates
+	\item Working through supplementary materials
+	\item Going to office hours
+    \item Working individually on the project
+    \item Working with your team on the project
+	\item Other (please specify)
+	\end{enumerate}
+
+\end{enumerate}
+
+\begin{questions}
+
+\question (8.4.4) Working in Mathematica/Python explore the dynamics of \[\ddot{\theta} + (1-\mu\cos\theta)\dot{\theta} + \sin\theta = 0 \text{ for } \mu \geq 0.\]
+\begin{parts}
+    \item Translate this into a first order system with variables $\theta$ and $v$. 
+    
+    \emph{You can use $x$ and $y$ as the variables in your code for simplicity: note that $\theta$ is $2\pi$-periodic, though, and that should be reflected in your work.}
+
+    \item How does the number, location, or type of fixed points change as the parameter is varied?  Distinguish between saddle points, attractors, and repellers.
+    
+    \item Classify the bifurcations that create and destroy a stable limit cycle as $\mu$ increases from $0$.  Identify any bifurcation points.  If the bifurcation point is not known exactly, include at least two digits after the decimal for its value.
+\end{parts}
+ 
+
+
+
+
+\emph{A $\dot{\theta} = f(\theta, y)$ equation is well-defined for $\theta$ a $2\pi$-periodic variable if $f(\theta,y) = f(\theta+2\pi,y)$.  It looks like a Li\'enard transformation could be helpful here, but it actually is not - we need the $\dot{\theta}$ equation to be $2\pi$-periodic and the Li\'enard transformation ruins this periodicity.}
+
+Extra notes for this: create a phase portrait where the stable limit cycle is visible
+
+
+
+\question (Project work: submit this work as a separate pdf on Canvas)
+
+Your team will be assigned a project paper from the list of papers that you submitted.  
+\begin{parts}
+\part Start reading your paper/chapter and submit the following notes on your reading (you can discuss your work with your team, but these notes are individual):
+\begin{itemize}
+    \item Read the abstract of your project paper carefully.  Note any sentences that are confusing to you, and any terms or ideas that don't yet make sense.
+    \item Read the introduction of the paper.  Make note of any background knowledge that they are assuming or presenting that you don't yet have.
+    \item Based on the abstract and introduction, write a brief summary of the purpose of the paper and how the authors say it connects to related work.
+    \item Look through the equations in the paper (if there are any).  Note the equations that you already have the knowledge / tools to derive / understand / replicate.
+    \item Look at the figures in the paper. 
+    \begin{itemize}
+        \item Identify figures that make sense to you based on what you already know.
+        \item Identify figures that will require learning more (math or content knowledge) to understand.
+        \item Note which ones seem like they would be easier to replicate (or to create analogs of if you'll be using different data).
+        \item Note which figures seem like they would be harder to replicate and identify what makes them harder.
+    \end{itemize}
+\end{itemize}
+
+\emph{Submit these notes as part of a pdf in the "weekly project update 01" assignment on Canvas.}
+
+
+\part Begin your work on the project: look up definitions and background information, make a list of questions you'd like to ask the course staff, work on replicating an initial analysis, find data to work with initially, etc.
+
+\emph{Add all of your notes on this as part of the pdf in the "weekly project update 01" assignment on Canvas.  Submit any code files separately.}
+
+\part Add a short collaboration report to your project update: to what extent did your team work together vs individually on this?  If you were working together, what did each team member contribute?
+\end{parts}
+
+
+
+
+\end{questions}
+
+\vfill
+
+\noindent\textbf{Project timeline}
+
+\noindent\textbf{Weekly on Fridays in April} Individual project work log due
+
+\noindent\textbf{April 20} (Wednesday before class) team progress report slides due
+
+\noindent\textbf{April 25/27} (Friday/Monday/Wednesday) team progress report presentations
+
+\noindent\textbf{May 6} (Friday) team final presentation slides due
+
+\noindent\textbf{May 7} (Saturday) team final presentations; individual log due
+
+
+
+\end{document}
